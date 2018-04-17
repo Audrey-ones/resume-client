@@ -2,12 +2,332 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link  rel="shortcut icon" href="img/koala.png">
     <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="bower_components/jquery/src/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/LoginController.js"></script>
+    <script type="text/javascript" src="sweetalert/sweetalert.min.js"></script>
+
 </head>
-<body>
-<div>
-    <div>登录</div>
+<style>
+    body{
+        font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+        background-color: #fff;
+    }
+    .sign {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /*  图标*/
+    .sign .logo {
+        position: absolute;
+        top: 56px;
+        margin-left: 50px;
+    }
+    .sign .logo img {
+        width: 100px;
+    }
+
+    /* 主要内容*/
+    h4 {
+        font-size: 18px;
+    }
+    .sign .main {
+        width: 257px;
+        margin: 63px -17px 0 -12px;
+        padding: 44px 89px 30px 56px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 8px rgba(0,0,0,.1);
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .sign .title {
+        margin: -27px 0 50px 0;
+        font-weight: 400;
+        color: #969696;
+        padding: 10px;
+    }
+    .normal-title {
+        padding-left: 57px;
+    }
+    .sign .title li {
+        padding: 10px 15px 13px 20px;
+        /*padding-top: 10px;
+        padding-bottom: 15px;
+        padding-right: 13px;
+        padding-left: 20px;*/
+    }
+    .sign .title li:hover{
+        border-bottom: 2px solid #57ad68;
+    }
+    .sign .title li a {
+        color: #969696;
+    }
+    a {
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+        float: left;
+    }
+    .sign .title b {
+        float: left;
+        padding: 10px;
+        padding-bottom: 15px;
+    }
+    b{
+        font-weight: 700;
+    }
+    .sign .title .active {
+        font-weight: 700;
+        color: #57ad68;
+        border-bottom: 2px solid #57ad68;
+    }
+    .sign .title .active a {
+        color: #57ad68
+    }
+    .js-sign-in-container {
+        margin-top: 85px;
+    }
+    .sign form {
+        margin-bottom: 30px;
+    }
+    .sign form .restyle {
+        margin-bottom: 0;
+    }
+    .sign form .input-prepend {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .sign form .restyle input {
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+    }
+    .sign form .input-prepend input {
+        width: 100%;
+        height: 41px;
+        padding: 4px 12px 4px 40px;
+        border: 1px solid #c8c8c8;
+        border-radius: 0 0 4px 4px;
+        background-color: hsla(0,0%,71%,.1);
+    }
+    .sign form .input-prepend label i {
+        position: absolute;
+        top: 14px;
+        left: 10px;
+        font-size: 18px;
+        color: #969696;
+    }
+    .sign .remember-btn {
+        float: left;
+        margin: 18px 0;
+    }
+    input[type="checkbox"], input[type="radio"] {
+        margin: 4px 0 0;
+        margin-top: 1px\9;
+        line-height: normal;
+    }
+    .sign .remember-btn span {
+        margin-left: 5px;
+        font-size: 15px;
+        color: #969696;
+        vertical-align: middle;
+    }
+    .sign .forget-btn {
+        float: right;
+        margin-top: 23px;
+        font-size: 14px;
+        margin-left: 2px;
+        margin-right: -54px;
+        position: relative;
+    }
+    .sign .forget-btn .dropdown-menu {
+        display: none;
+        margin-top: 18px;
+        right: 3px;
+        background-color: #fff;
+        border-radius: 4px;
+        height: 167px;
+        line-height: 1.5;
+        border: 1px solid rgba(0,0,0,.15);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        position: absolute;
+        padding-left: 11px;
+        width: 191px;
+        z-index: 99;
+    }
+    .sign .forget-btn .dropdown-menu a {
+        padding: 10px 20px;
+        color: #333;
+    }
+    .sign .forget-btn a {
+        color: #999;
+        float: right;
+    }
+    .sign .sign-in-button{
+        width: 121%;
+        padding: 9px 18px;
+        font-size: 18px;
+        border: none;
+        color: #57ad68;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        clear: both;
+        font-weight: 200;
+        font-size: 14px;
+        line-height: 44px;
+        -ms-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid rgba(120,188,133,0.5);
+        -ms-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        margin-right: 10px;
+        background-color: #fff;
+    }
+    .sign .sign-in-button:hover{
+        color:#fff;
+        background-color: #57ad68;
+    }
+    .sign .more-sign {
+        margin-top: 30px;
+    }
+    .sign .more-sign h6 {
+        position: relative;
+        margin: 0 -54px 20px 0;
+        font-size: 12px;
+        color: #b5b5b5;
+    }
+    .sign .more-sign ul {
+        margin-bottom: 30px;
+        list-style: none;
+    }
+    .sign .more-sign ul li {
+        margin: 0 2px;
+        display: inline-block;
+    }
+    .sign .more-sign ul a {
+        width: 50px;
+        height: 50px;
+        background-color: hsla(0,0%,71%,.2);
+        border-radius: 50%;
+        line-height: 50px;
+        display: block;
+        color: #a6a6a6;
+    }
+    .sign .more-sign ul img {
+        font-size: 24px;
+    }
+    .sign .more-sign .ic-more {
+        color: #787878;
+    }
+
+</style>
+<body ng-app="MyApp" ng-controller="LoginController">
+<div class="sign">
+    <!--图标-->
+    <a href="index.html" >
+        <div class="logo">
+            <img src="img/koala_logo.png" alt="Logo">
+        </div>
+    </a>
+    <!--主要内容-->
+    <div class="main">
+        <h4 class="title">
+            <ul class="normal-title">
+                <li class="active">
+                    <a href="sign_in.html">登录</a>
+                </li>
+                <b>·</b>
+                <li>
+                    <a href="sign_up.html">注册</a>
+                </li>
+            </ul>
+        </h4>
+        <div class="js-sign-in-container">
+            <form  method="post" accept-charset="utf-8">
+                <div class="input-prepend restyle js-normal">
+                    <label>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </label>
+                    <input placeholder="用户名" type="text" ng-model="user.account"/>
+                </div>
+                <!-- 密码输入框 -->
+                <div class="input-prepend">
+                    <label>
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                    </label>
+                    <input placeholder="密码" type="password" ng-model="user.password"/>
+                </div>
+                <div></div>
+                <div class="remember-btn">
+                    <input value="true" checked="checked" type="checkbox" name="session[remember_me]" id="session_remember_me">
+                    <span>记住账号</span>
+                </div>
+                <div class="forget-btn">
+                    <a class="problem" data-toggle="dropdown" href="javascript:void(0);">登录遇到问题?</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users/password/mobile_reset">用手机号重置密码</a></li>
+                        <li><a href="/users/password/email_reset">用邮箱重置密码</a></li>
+                        <li><a target="_blank" href="/p/9058d0b8711d">无法用海外手机号登录</a></li>
+                        <li><a target="_blank" href="/p/498a9fa7da08">无法用 Google 帐号登录</a></li>
+                    </ul>
+                </div>
+                <input name="commit" value="登录" class="sign-in-button" type="submit" ng-click="signIn(user)"/>
+            </form>
+            <!-- 更多登录方式 -->
+            <div class="more-sign">
+                <h6>社交帐号登录</h6>
+                <ul>
+                    <li>
+                        <a class="weibo" href="/users/auth/weibo">
+                            <img src="image/ic_weibo.png" style="width: 50px">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="weixin" href="/users/auth/wechat">
+                            <img src="image/ic_wechat.png" style="width: 50px">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="qq" href="/users/auth/qq_connect">
+                            <img src="image/ic_qq.png" style="width: 50px">
+                        </a>
+                    </li>
+                    <li class="js-more-method">
+                        <a class="ic_more" href="javascript:void(0);">
+                            其他
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
 </div>
-<script src="js/test.js"></script>
+
 </body>
+<script>
+    /*登录遇到问题?*/
+    $(".problem").focus(function () {
+        $(".dropdown-menu").show();
+    });
+    $(".problem").blur(function () {
+        $(".dropdown-menu").hide();
+    });
+</script>
 </html>

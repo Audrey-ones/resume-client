@@ -17,6 +17,13 @@ body{
     width: 100px;
 }
 
+.sign .logo .logo_title{
+    font-family: STLiti;
+    /*font-family: STXinwei;*/
+    font-size: 20px;
+    font-weight: 700;
+}
+
 /* 主要内容*/
 h4 {
     font-size: 18px;

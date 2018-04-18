@@ -17,7 +17,7 @@
 (function () {
     'use strict';
     angular.module('resumeApp')
-        .constant('domain', "http://test.moistmedia.net/catpowerserver/");//把服务器地址定义为一个全局变量
+        .constant('domain', "http://localhost:8080");//把服务器地址定义为一个全局变量
 })();
 
 

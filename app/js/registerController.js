@@ -3,10 +3,10 @@
     var app = angular.module('resumeApp',[]);
     app.controller("registerController", ["$scope", "registerService","$rootScope", function ($scope, registerService, $rootScope) {
         $scope.register = function(user){
-            if (user.account != "" && user.password != null && user.surePwd != null){
+            if (user.username != "" && user.password != null && user.surePwd != null){
                 if (user.password == user.surePwd){
                     var data = {
-                        "account" : user.account,
+                        "username" : user.username,
                         "password" : user.password
                     };
                     registerService.userRegister(data,function(data){
@@ -41,11 +41,11 @@
 
     }]);
 
-    app.service("registerService", ["$http",function ($http) {
+    app.service("registerService", ["$http","domain",function ($http,domain) {
         this.userRegister = function (user,callback) {
             $http({
                 method:'POST',
-                url:'/user/register',
+                url:domain + '/api/register/user',
                 /*url :'../json/userList.json',*/
                 data :user
             }).then(function(data){

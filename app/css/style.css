@@ -31,10 +31,9 @@ h4 {
 .sign .main {
     width: 257px;
     margin: 63px -17px 0 -12px;
-    padding: 180px 89px 30px 56px;
+    padding: 146px 89px 30px 56px;
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0,0,0,.1);
     vertical-align: middle;
     display: inline-block;
 }

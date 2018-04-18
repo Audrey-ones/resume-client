@@ -43,21 +43,21 @@
                     <label>
                         <i class="fa fa-user-circle" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="昵称" type="text" ng-model="user.nickname">
+                    <input placeholder="手机号" type="text" ng-model="user.account">
                 </div>
                 <!--输入手机号-->
                 <div class="input-prepend" style="margin-bottom: 15px">
                     <label>
                         <i class="fa fa-mobile" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="手机号" type="text" ng-model="user.account">
+                    <input placeholder="密码" type="text" ng-model="user.password">
                 </div>
                 <!-- 输入密码 -->
                 <div class="input-prepend" style="margin-bottom: 30px">
                     <label>
                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="密码" type="password" ng-model="user.password">
+                    <input placeholder="确认密码" type="password" ng-model="user.surePwd">
                 </div>
                 <input name="register" value="注册" class="all_btn" type="submit" ng-click="register(user)">
             </form>

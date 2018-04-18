@@ -1,0 +1,222 @@
+body{
+    font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    background-color: #fff;
+}
+.sign {
+    text-align: center;
+    font-size: 14px;
+}
+
+/*  图标*/
+.sign .logo {
+    position: absolute;
+    top: 56px;
+    margin-left: 50px;
+}
+.sign .logo img {
+    width: 100px;
+}
+
+/* 主要内容*/
+h4 {
+    font-size: 18px;
+}
+.sign .main {
+    width: 257px;
+    margin: 63px -17px 0 -12px;
+    padding: 180px 89px 30px 56px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    vertical-align: middle;
+    display: inline-block;
+}
+.sign .title {
+    margin: -27px 0 50px 0;
+    font-weight: 400;
+    color: #969696;
+    padding: 10px;
+}
+.normal-title {
+    padding-left: 57px;
+}
+.sign .title li {
+    padding: 10px 15px 13px 20px;
+    /*padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 13px;
+    padding-left: 20px;*/
+}
+.sign .title li:hover{
+    border-bottom: 2px solid #57ad68;
+}
+.sign .title li a {
+    color: #969696;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+    float: left;
+}
+.sign .title b {
+    float: left;
+    padding: 10px 15px;
+    font-weight: 900;
+}
+b{
+    font-weight: 700;
+}
+.sign .title .active {
+    font-weight: 700;
+    color: #57ad68;
+    border-bottom: 2px solid #57ad68;
+}
+.sign .title .active a {
+    color: #57ad68
+}
+.js-sign-in-container {
+    margin-top: 85px;
+}
+.sign form {
+    margin-bottom: 30px;
+}
+.sign form .restyle {
+    margin-bottom: 0;
+}
+.sign form .input-prepend {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.sign form .restyle input {
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+.sign form .input-prepend input {
+    width: 100%;
+    height: 35px;
+    padding: 4px 12px 4px 40px;
+    border: 1px solid #c8c8c8;
+    border-radius: 10px;
+    outline:none;/*去掉输入框聚焦时的边框*/
+    background-color: hsla(0,0%,71%,.1);
+}
+.sign form .input-prepend label i {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    font-size: 18px;
+    color: #969696;
+}
+.sign .remember_btn {
+    float: left;
+    margin: 18px 5px;
+}
+input[type="checkbox"], input[type="radio"] {
+    margin: 4px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+.sign .remember_btn span {
+    margin-left: 5px;
+    font-size: 15px;
+    color: #969696;
+    vertical-align: middle;
+}
+.sign .forget_btn {
+    float: right;
+    margin-top: 23px;
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: -54px;
+    position: relative;
+}
+.sign .forget_btn .dropdown-menu {
+    display: none;
+    margin-top: 18px;
+    right: 3px;
+    background-color: #fff;
+    border-radius: 4px;
+    height: 167px;
+    line-height: 1.5;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    position: absolute;
+    padding-left: 11px;
+    width: 191px;
+    z-index: 99;
+}
+.sign .forget_btn .dropdown-menu a {
+    padding: 10px 20px;
+    color: #333;
+}
+.sign .forget_btn a {
+    color: #999;
+    float: right;
+}
+.sign .all_btn{
+    width: 121%;
+    padding: 0px 0px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    clear: both;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 44px;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #57ad68;
+    -ms-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    color:#fff;
+    background-color: #57ad68;
+}
+/*.sign .all_btn:hover{
+    color:#57ad68;
+    background-color: #fff;
+}*/
+.sign .more-sign {
+    margin-top: 30px;
+}
+.sign .more-sign h6 {
+    position: relative;
+    margin: 0 -54px 20px 0;
+    font-size: 12px;
+    color: #b5b5b5;
+}
+.sign .more-sign ul {
+    margin-bottom: 30px;
+    list-style: none;
+}
+.sign .more-sign ul li {
+    margin: 0 2px;
+    display: inline-block;
+}
+.sign .more-sign ul a {
+    width: 50px;
+    height: 50px;
+    background-color: hsla(0,0%,71%,.2);
+    border-radius: 50%;
+    line-height: 50px;
+    display: block;
+    color: #a6a6a6;
+}
+.sign .more-sign ul img {
+    font-size: 24px;
+}
+.sign .more-sign .ic-more {
+    color: #787878;
+}

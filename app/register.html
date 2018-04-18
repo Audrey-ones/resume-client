@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link  rel="shortcut icon" href="img/koala.png">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/registerController.js"></script>
+</head>
+
+<body ng-app="resumeApp" ng-controller="registerController">
+<div class="sign">
+    <!--图标-->
+    <a href="index.html" style="color: black;">
+        <div class="logo">
+            <i class="fa fa-map-signs" aria-hidden="true" style="font-size: 80px"></i>
+            <span style="font-family: verdana;">PERSONAL RESUME</span>
+        </div>
+    </a>
+    <!--主要内容-->
+    <div class="main">
+        <h4 class="title">
+            <ul class="normal-title">
+                <li>
+                    <a href="sign_in.html">登录</a>
+                </li>
+                <b>·</b>
+                <li class="active">
+                    <a href="sign_up.html">注册</a>
+                </li>
+            </ul>
+        </h4>
+        <div class="js-sign-in-container">
+            <form  method="post" accept-charset="utf-8">
+                <!--输入昵称-->
+                <div class="input-prepend restyle js-normal" style="margin-bottom: 15px">
+                    <label>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </label>
+                    <input placeholder="昵称" type="text" ng-model="user.nickname">
+                </div>
+                <!--输入手机号-->
+                <div class="input-prepend" style="margin-bottom: 15px">
+                    <label>
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                    </label>
+                    <input placeholder="手机号" type="text" ng-model="user.account">
+                </div>
+                <!-- 输入密码 -->
+                <div class="input-prepend" style="margin-bottom: 30px">
+                    <label>
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </label>
+                    <input placeholder="密码" type="password" ng-model="user.password">
+                </div>
+                <input name="register" value="注册" class="all_btn" type="submit" ng-click="register(user)">
+            </form>
+            <!-- 更多登录方式 -->
+            <div class="more-sign">
+                <h6>点击 “注册” 即表示您同意并愿意遵守本系统的 用户协议 和 隐私政策 。</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

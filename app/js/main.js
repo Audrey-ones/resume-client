@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('resumeApp', ["ui.router",]).config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
+    angular.module('resumeApp', ["ui.router"]).config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
         function ($stateProvider, $urlRouterProvider, $httpProvider) {//路由定义
             $urlRouterProvider.otherwise('/');
             $stateProvider

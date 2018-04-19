@@ -116,6 +116,19 @@ b{
     font-size: 18px;
     color: #969696;
 }
+
+.sign form .input-prepend .tip{
+    position: absolute;
+    top: 12px;
+    right: -152px;
+    font-size: 14px;
+    color: #969696;
+    color: #f27474;
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 4px;
+}
+
 .sign .remember_btn {
     float: left;
     margin: 18px 5px;
@@ -220,9 +233,9 @@ input[type="checkbox"], input[type="radio"] {
     display: block;
     color: #a6a6a6;
 }
-.sign .more-sign ul img {
+/*.sign .more-sign ul img {
     font-size: 24px;
-}
+}*/
 .sign .more-sign .ic-more {
     color: #787878;
 }

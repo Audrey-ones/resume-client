@@ -42,16 +42,16 @@
                 <!-- 输入手机号 -->
                 <div class="input-prepend restyle js-normal">
                     <label>
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="手机号" type="text" ng-model="user.account"/>
+                    <input placeholder="手机号" type="text" ng-model="account"/>
                 </div>
                 <!-- 输入密码 -->
                 <div class="input-prepend">
                     <label>
-                        <i class="fa fa-key" aria-hidden="true"></i>
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="密码" type="password" ng-model="user.password"/>
+                    <input placeholder="密码" type="password" ng-model="password"/>
                 </div>
                 <div></div>
                 <div class="remember_btn">
@@ -61,7 +61,7 @@
                 <div class="forget_btn">
                     <a class="forget_pwd" href="javascript:void(0);">忘记密码 ?</a>
                 </div>
-                <input name="login" value="登录" class="all_btn" type="submit" ng-click="signIn(user)"/>
+                <input name="login" value="登录" class="all_btn" type="submit" ng-click="signIn(account,password)"/>
             </form>
         </div>
     </div>

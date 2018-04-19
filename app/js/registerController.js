@@ -1,15 +1,23 @@
 (function () {
     'use strict';
     var app = angular.module('resumeApp',[]);
+    app.constant('domain', "http://localhost:8080");//把服务器地址定义为一个全局变量
     app.controller("registerController", ["$scope", "registerService","$rootScope", function ($scope, registerService, $rootScope) {
-        $scope.register = function(user){
-            if (user.username != "" && user.password != null && user.surePwd != null){
-                if (user.password == user.surePwd){
-                    var data = {
-                        "username" : user.username,
-                        "password" : user.password
+        $scope.register = function(username,password,surePwd){
+            if (username == null || password == null || surePwd == null){
+                swal({
+                    title:"请输入完整信息！",
+                    type:"error",
+                    timer:1000,
+                    showConfirmButton:false
+                });
+            }else{
+                if (password == surePwd){
+                    var user = {
+                        "username" : username,
+                        "password" : password
                     };
-                    registerService.userRegister(data,function(data){
+                    registerService.userRegister(user,function(data){
                         console.log(data)
                         swal({
                             title:"注册成功",
@@ -17,8 +25,7 @@
                             timer:1000,
                             showConfirmButton:false
                         });
-                        /*window.setTimeout("location.href='sign_in.html'",1200);*/
-                        $state.go("sign_in.html");
+                        window.setTimeout("location.href='sign_in.html'",1200);
                     })
                 }else {
                     swal({
@@ -27,15 +34,13 @@
                         timer:1000,
                         showConfirmButton:false
                     });
-                    user.password = "";
-                    user.surePwd = "";
+                    $scope.password = "";
+                    $scope.surePwd = "";
 
                 }
-
-            }else {
-                console.log(user.nickname)
-                swal("必填项不能为空！","error");
             }
+
+
 
         }
 
@@ -46,8 +51,7 @@
             $http({
                 method:'POST',
                 url:domain + '/api/register/user',
-                /*url :'../json/userList.json',*/
-                data :user
+                data : JSON.stringify(user)
             }).then(function(data){
                 if (callback) {
                     callback(data);

@@ -43,7 +43,7 @@
                     <label>
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="手机号" type="text" ng-model="username">
+                    <input placeholder="请输入手机号" type="text" ng-model="username">
                     <div class="tip checkPhone" style="display: none">请输入用户名</div>
                 </div>
                 <!--输入密码-->
@@ -51,14 +51,14 @@
                     <label>
                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="密码" type="password" ng-model="password">
+                    <input placeholder="请输入密码，6-20个字母、数字、下划线" type="password" ng-model="password">
                 </div>
                 <!-- 确认密码 -->
                 <div class="input-prepend" style="margin-bottom: 30px">
                     <label>
                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     </label>
-                    <input placeholder="确认密码" type="password" ng-model="surePwd">
+                    <input placeholder="请确认密码" type="password" ng-model="surePwd">
                 </div>
                 <input name="register" value="注册" class="all_btn" type="submit" ng-click="register(username,password,surePwd)">
             </form>

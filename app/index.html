@@ -12,6 +12,8 @@
   <meta http-equiv="expires" content=""/>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="sweetalert/sweetalert.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
@@ -21,14 +23,70 @@
   <script type="text/javascript" src="sweetalert/sweetalert.min.js"></script>
 
 <body ng-app="resumeApp">
-<div>
+<!--<div>
   <button ui-sref="homePage">HomePage测试</button>
   <a href="sign_in.html">登录测试</a>
   <a href="register.html">注册测试</a>
-</div>
+</div>-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!--左上角-->
+    <a class="logo" href="#">
+      <i class="fa fa-map-signs" aria-hidden="true" style="font-size: 24px;"></i>
+      <span style="font-family: STLiti;font-size: 18px">PERSONAL RESUME</span>
+    </a>
+    <!--右上角-->
+    <!--登录显示写文章-->
+    <a class="btn write-btn" href="write.html">
+      <img ng-src="img/svg/feather.svg">
+      写文章
+    </a>
+    <a href="sign_up.html" class="btn sign-up" ng-if="!token">注册</a>
+    <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>
+    <div class="user">
+      <div data-hover="dropdown" ng-if="token">
+        <a class="avatar user-icon" href="#/personal">
+          <img ng-src="image/user/user01.jpg" alt="120">
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div id="menu" class="collapse navbar-collapse">
+        <ul>
+          <li class="active">
+            <a href="/">
+              <span class="menu-text">首頁</span>
+              <i></i>
+            </a>
+          </li>
+          <li ng-if="!token">
+            <a href="/">
+              <span>模板商城</span>
+            </a>
+          </li>
+          <li ng-if="!token">
+            <a href="/">
+              <span>在線製作</span>
+            </a>
+          </li>
+          <li ng-if="!token">
+            <a href="/">
+              <span>簡歷代寫</span>
+            </a>
+          </li>
+          <li ng-if="!token">
+            <a href="#/message">
+              <span>消息</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-  <div ui-view></div>
+<div ui-view></div>
 
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

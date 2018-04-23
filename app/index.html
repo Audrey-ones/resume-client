@@ -38,7 +38,7 @@
     <!--右上角-->
     <!--登录显示写文章-->
     <a class="btn write-btn" href="write.html">
-      <img ng-src="img/svg/feather.svg">
+      <!--<img ng-src="img/svg/feather.svg">-->
       写文章
     </a>
     <a href="sign_up.html" class="btn sign-up" ng-if="!token">注册</a>
@@ -54,29 +54,29 @@
       <div id="menu" class="collapse navbar-collapse">
         <ul>
           <li class="active">
-            <a href="/">
-              <span class="menu-text">首頁</span>
+            <a ui-sref="homePage">
+              <span class="menu-text">首页</span>
               <i></i>
             </a>
           </li>
           <li ng-if="!token">
-            <a href="/">
+            <a ui-sref="templateStore">
               <span>模板商城</span>
             </a>
           </li>
           <li ng-if="!token">
             <a href="/">
-              <span>在線製作</span>
+              <span>在线制作</span>
             </a>
           </li>
           <li ng-if="!token">
             <a href="/">
-              <span>簡歷代寫</span>
+              <span>简历代写</span>
             </a>
           </li>
           <li ng-if="!token">
             <a href="#/message">
-              <span>消息</span>
+              <span>职场说</span>
             </a>
           </li>
         </ul>

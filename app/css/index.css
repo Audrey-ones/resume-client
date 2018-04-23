@@ -28,6 +28,19 @@ a {
     background-color: transparent;
 }
 
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+
 /*导航条start*/
 .navbar {
     border-radius: 4px;
@@ -56,10 +69,10 @@ a {
 }
 
 .navbar-fixed-bottom, .navbar-fixed-top {
-    position: fixed;
+    /*position: fixed;
     right: 0;
-    left: 0;
-    z-index: 1030;
+    left: 0;*/
+    : 1030;
 }
 
 nav {
@@ -102,16 +115,16 @@ nav .sign-up {
     height: 38px;
     line-height: 24px;
     margin: 9px 5px 0 15px;
-    border: 1px solid rgba(236,97,73,.7);
+    border: 1px solid #57ad68;
     border-radius: 4px;
     font-size: 15px;
-    color: #ea6f5a;
+    color: #57ad68;
     background-color: transparent;
 }
 
 nav .sign-up:hover{
     background-color: #FEF7F6;
-    color: #ea6f5a;
+    color: #57ad68;
 }
 
 nav .logo {
@@ -191,7 +204,7 @@ nav .write-btn {
     border-radius: 4px;
     font-size: 15px;
     color: #fff;
-    background-color: #ea6f5a;
+    background-color: #57ad68;
 }
 
 .detail-container,.container {
@@ -224,11 +237,11 @@ li {
 }
 
 #menu .active a {
-    color: #ea6f5a;
+    color: #57ad68;
 }
 
 #menu .active a:focus, #menu .active a:hover {
-    color: #ea6f5a;
+    color: #57ad68;
 }
 
 #menu ul {
@@ -247,11 +260,11 @@ li {
 
 #menu li:hover {
     background-color: #ffffff;
-    border-top: 3px solid #ea6f5a;
+    border-top: 3px solid #57ad68;
 }
 
 #menu a:focus, #menu a:hover {
-    color: #ea6f5a;
+    color: #57ad68;
     background: none;
 }
 

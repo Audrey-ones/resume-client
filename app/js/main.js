@@ -6,11 +6,16 @@
 
     angular.module('resumeApp', ["ui.router"]).config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
         function ($stateProvider, $urlRouterProvider, $httpProvider) {//路由定义
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/homePage');
             $stateProvider
                 .state('homePage', {
                     url: '/homePage',
                     templateUrl: 'page/homePage.html',
+                    /*controller: "homePageController"*/
+                })
+                .state('templateStore', {
+                    url: '/templateStore',
+                    templateUrl: 'page/templateStore.html',
                     /*controller: "homePageController"*/
                 })
 

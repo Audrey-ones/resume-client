@@ -1,0 +1,87 @@
+<div class="detail-container">
+    <div class="row">
+        <div class="col-md-8 main">
+            <div class="list-container">
+                <form class="form-horizontal" style="width: 90%">
+                    <div class="form-group" style="margin-top: 60px">
+                        <label class="col-sm-6"></label>
+                        <div id="headDiv" class="col-sm-6">
+                            <img class="img-circle" src="../image/user/user01.jpg" id="userHead" title="点击更改头像"
+                                 onclick="getPicture()" style="width: 80px;height: 80px;margin-top: -30px">
+                        </div>
+                        <input type="file" file-model="myFile" onchange="setImage(this,headDiv,userHead)" id="photo" style="display: none"/>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px">
+                        <label for="name" class="col-sm-3 control-label">昵称：</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="name"
+                                   ng-model="person.nickname"><!--placeholder="{{person.nickname}}"-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">个人介绍：</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="3"
+                                      ng-model="person.description"></textarea><!--placeholder="{{person.description}}"-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 250px;width: 30%">保存</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 50px;width: 30%" ui-sref="userPage">返回</button>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success btn-default"
+                                    style="margin-left: 175px;width: 30%" ng-click="update(person)">修改</button>
+                        </div>
+                    </div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getPicture() {
+        $('#photo').click();
+    }
+
+    function setImage(docObj,localImageId,imgObjPreview) {
+        var f=$(docObj).val();
+        f=f.toLowerCase();
+        var strRegex=".bmp|jpg|png|jpeg$";
+        var re=new RegExp(strRegex);
+        if (re.test(f.toLowerCase())){
+
+        }else {
+            alert("请选择正确格式的图片");
+            file=$('#photo');
+            file.after(file.clone());
+            file.remove();
+            return false;
+        }
+        if (docObj.files&& docObj.files[0]){
+            imgObjPreview.src=window.URL.createObjectURL(docObj.files[0]);
+        }else{
+            docObj.select();
+            var imgSrc=document.selection.createRange().text;
+            try {
+                localImageId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                localImageId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src=imgSrc;
+            }catch (e){
+                alert("你上传的图片格式不正确，请重新选择");
+                return false;
+            }
+
+            imgObjPreview.style.display='none';
+            document.selection.empty();
+        }
+
+        return true;
+    }
+</script>
+

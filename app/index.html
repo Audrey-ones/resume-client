@@ -22,6 +22,39 @@
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script type="text/javascript" src="sweetalert/sweetalert.min.js"></script>
 
+  <style type="text/css">
+    .user ul{
+      width: 112px;
+      /*background: #ffffff;*/
+      /*background: yellow;*/
+      position: absolute;
+      right: 95px;
+      top: 40px;
+      padding-top: 20px;
+      display: none;
+      z-index: 9;
+      border-top: none;
+      cursor: pointer;
+    }
+    .user ul li{
+      float: none;
+      height: 32px;
+      line-height: 32px;
+      border-bottom: 1px dotted #f5f6f9;
+      display: block;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .user ul li:hover{
+      color: #00b3ee;
+      /*color: #57ad68;*/
+    }
+    .user:hover ul{
+      display: block;
+    }
+  </style>
+
 <body ng-app="resumeApp">
 <!--<div>
   <button ui-sref="homePage">HomePage测试</button>
@@ -35,19 +68,25 @@
       <i class="fa fa-map-signs" aria-hidden="true" style="font-size: 24px;"></i>
       <span style="font-family: STLiti;font-size: 18px">PERSONAL RESUME</span>
     </a>
-    <!--右上角-->
-    <!--登录显示写文章-->
-    <a class="btn write-btn" href="write.html">
-      <!--<img ng-src="img/svg/feather.svg">-->
-      写文章
+    <!-- 右上角-->
+    <!--登录显示我的主页-->
+    <a class="btn home-btn" href="write.html" ng-if="!token">
+      我的主页
     </a>
-    <a href="sign_up.html" class="btn sign-up" ng-if="!token">注册</a>
-    <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>
-    <div class="user">
-      <div data-hover="dropdown" ng-if="token">
-        <a class="avatar user-icon" href="#/personal">
+    <!--<a href="register.html" class="btn sign-up" ng-if="!token">注册</a>
+    <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>-->
+    <div class="user" style="position: relative">
+      <div data-hover="dropdown" ng-if="!token">
+        <a class="avatar user-icon">
           <img ng-src="image/user/user01.jpg" alt="120">
         </a>
+        <ul>
+          <li ui-sref="userPage">求职中心</li>
+          <li>我的简历</li>
+          <li>修改密码</li>
+          <li>账户绑定</li>
+          <li>退出</li>
+        </ul>
       </div>
     </div>
     <div class="container">

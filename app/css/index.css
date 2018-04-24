@@ -159,6 +159,7 @@ nav .logo img {
     user-select: none;
 }
 
+
 .search {
     margin: 0 0 0 15px;
     padding: 0 0 0 15px;
@@ -195,7 +196,7 @@ nav form .search-btn {
     text-align: center;
 }
 
-nav .write-btn {
+nav .home-btn {
     float: right;
     width: 100px;
     height: 38px;
@@ -205,6 +206,10 @@ nav .write-btn {
     font-size: 15px;
     color: #fff;
     background-color: #57ad68;
+}
+
+.home-btn:hover{
+    color: #ffffff;
 }
 
 .detail-container,.container {
@@ -219,7 +224,7 @@ nav .write-btn {
 }
 
 .detail-container{
-    margin:100px auto 0;
+    margin:30px auto 0;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -965,9 +970,11 @@ footer .icp {
 }
 
 .main-top .info {
-    margin-top: 5px;
+    margin-top: 50px;
     padding-left: 100px;
     font-size: 14px;
+    font-weight: 700;
+    color: #969696;
 }
 
 .main-top .info ul {

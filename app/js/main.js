@@ -18,6 +18,16 @@
                     templateUrl: 'page/templateStore.html',
                     /*controller: "homePageController"*/
                 })
+                .state('userPage', {
+                    url: '/userPage',
+                    templateUrl: 'page/userPage.html',
+                    /*controller: "homePageController"*/
+                })
+                .state('editUser', {
+                    url: '/editUser',
+                    templateUrl: 'page/editUser.html',
+                    /*controller: "homePageController"*/
+                })
 
         }]);
 })();

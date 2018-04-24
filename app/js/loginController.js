@@ -32,6 +32,7 @@
                         if (data.msg == "密码不正确"){
                             errorTip("密码不正确，请重试！");
                             $scope.password="";
+
                         }
                     })
                 }else{

@@ -224,7 +224,7 @@ nav .home-btn {
 }
 
 .detail-container{
-    margin:30px auto 0;
+    margin:-1% auto 0;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -782,6 +782,14 @@ footer .icp {
     line-height: 25px;
 }
 
+/*#topicTab a:hover {
+    color: #F27474;
+}*/
+
+#topicTab a:hover {
+    color: #F27474;
+}
+
 #topicTab .this-active a {
     color: #000;
 }
@@ -970,10 +978,9 @@ footer .icp {
 }
 
 .main-top .info {
-    margin-top: 50px;
+    margin-top: 2%;
     padding-left: 100px;
     font-size: 14px;
-    font-weight: 700;
     color: #969696;
 }
 
@@ -1415,4 +1422,9 @@ ul {
 
 .personal .idol_tab li .name{
     padding-left: 20px;
+}
+
+/*编辑用户信息页面*/
+label{
+    color: #969696;
 }

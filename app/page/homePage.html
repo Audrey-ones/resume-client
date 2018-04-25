@@ -1,145 +1,15 @@
-<!--
-<div class="container">
-    <div class="wrapper clearfix">
-        <ul class="wrapper-content">
-            <li ng-repeat="carousel in carousels" data-src="{{carousel.id}}">
-                <a href="{{carousel.url}}"><img ng-src="{{carousel.img}}" alt=""></a>
-            </li>
-        </ul>
-        <a href="javascript:void(0)" class="btn pre"><</a>
-        <a href="javascript:void(0)" class="btn next">></a>
-        <ul class="carousel">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    &lt;!&ndash;<div>&ndash;&gt;
-    &lt;!&ndash;专题与文章列表&ndash;&gt;
-    <div class="col-xs-16 main">
-        &lt;!&ndash;专题&ndash;&gt;
-        <div class="recommend-collection">
-            <a class="collection" target="_blank" href="#/topic/{{topic.topicId}}" ng-repeat="topic in topics">
-                <img ng-src="{{topic.logo}}">
-                <div class="name">{{topic.name}}</div>
-            </a>
-            <a class="more-hot-collection" target="_blank" href="#/allTopic">
-                更多热点专题 >
-            </a>
-        </div>
-        <div class="split-line"></div>
-
-        &lt;!&ndash;文章列表&ndash;&gt;
-        <div class="list-container">
-            <ul class="note-list">
-                <li ng-repeat="article in articles" id="{{article.articleCustom.articleId}}"
-                    class="{{article.articleCustom.thumbnail != null ? 'have-img' : ''}}" >
-                    <a class="wrap-img" href="#/article/{{article.articleCustom.articleId}}" target="_blank">
-                        <img ng-src="{{article.articleCustom.thumbnail}}">
-                    </a>
-                    <div class="content">
-                        <div class="author">
-                            <a class="avatar" href="#/user/{{article.userCustom.userId}}" target="_blank">
-                                <img ng-src="{{article.userCustom.head}}" alt="">
-                            </a>
-                            <div class="name">
-                                <a href="#/user/{{article.userCustom.userId}}" class="blue-link" target="_blank">
-                                    {{article.userCustom.nickname}}
-                                </a>
-                            </div>
-                            <a href="#/article/{{article.articleCustom.articleId}}" class="title" target="_blank">
-                                {{article.articleCustom.title}}
-                            </a>
-                            <p class="abstract">{{article.articleCustom.content|contentFilter}}...</p>
-                            <div class="meta">
-                                <a class="collection-tag" target="_blank" href="#/topic/{{article.articleCustom.topicId}}">{{article.topicCustom.name}}</a>
-                                <a target="_blank" href="#/article/{{article.articleCustom.articleId}}">
-                                    <i class="fa fa-eye"></i> {{article.articleCustom.readCount}}
-                                </a>
-                                <a target="_blank" href="#/article/{{article.articleCustom.articleId}}#comments">
-                                    <i class="fa fa-comment"></i> {{article.articleCustom.commentCount}}
-                                </a>
-                                <span><i class="fa fa-heart"></i> {{article.articleCustom.likeCount}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <a href="javascript:void(0);" ng-click="selectMore()" class="load-more">加载更多</a>
-        </div>
-    </div>
-    <div class="col-xs-7 col-xs-offset-1 aside">
-        &lt;!&ndash;热门列表&ndash;&gt;
-        <div class="board">
-            <a target="_blank" href="#/top/{{top.id}}" ng-repeat="top in tops">
-                <img ng-src="{{top.view}}" alt="{{top.id}}">
-            </a>
-        </div>
-        &lt;!&ndash;推荐用户&ndash;&gt;
-        <div class="recommend">
-            <div class="title">
-                <span>推荐作者</span>
-                <div class="reload">
-                    <div class="page-count">1/38</div>
-                    <div class="page-change">
-                        <a><i class="fa fa-chevron-left"></i></a>
-                        <a><i class="fa fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <ul class="list">
-                <li ng-repeat="author in authors">
-                    <a class="avatar" href="#/user/{{author.userId}}" target="_blank">
-                        <img ng-src="{{author.head}}">
-                    </a>
-
-                    <a href="javascript:void(0);" ng-if="authorIds|attentionFilter:author.userId" ng-click="followUser(author)" class="follow">
-                        <i class="fa fa-plus"></i>
-                        关注
-                    </a>
-                    <a href="javascript:void(0);" ng-if="authorIds|attention:author.userId" ng-click="cancelFollowUser(author)" class="cancelFollow">
-                        <i class="fa fa-close"></i>
-                        取消关注
-                    </a>
-                    <a href="#/user/{{author.userId}}" class="name" target="_blank">{{author.nickname}}</a>
-                    <P>写了{{author.writeCount}}字 · {{author.likeCount}}喜欢</P>
-                </li>
-            </ul>
-            <a href="#/allUser" target="_blank" class="find-more">
-                查看全部
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </div>
-    </div>
-</div>
-
-<footer class="container">
-    <div class="row">
-        <div class="col-xs-17 main">
-            <a href="http://www.jianshu.com/c/jppzD2">关于简书</a>
-            <em>.</em>
-            <a href="http://www.jianshu.com/contact">联系我们</a>
-            <em>.</em>
-            <a href="http://www.jianshu.com/c/bfeec2e13990">加入我们</a>
-            <em>.</em>
-            <a href="http://www.jianshu.com/c/fc488cd78374">作者成书计划</a>
-            <em>.</em>
-            <a href="http://www.jianshu.com/nb/547">帮助中心</a>
-            <em>.</em>
-            <a href="http://www.jianshu.com/p/cabc8fa39830">合作伙伴</a>
-            <div class="icp">
-                ©2017 南京工业职业技术学院 / Tel:你猜猜看吧 / 仿简书 / 备案号：451114112414
-            </div>
-        </div>
-    </div>
-</footer>
--->
-
 <div>
-    <h1>HELLO，主页</h1>
+    输入: <input ng-model="name">
+    <h1>你输入了: {{name}}</h1>
+    <ul>
+        <li>
+            我是谁
+        </li>
+        <li>
+            你是谁
+        </li>
+        <li ng-click="weAre()">
+            我们是谁
+        </li>
+    </ul>
 </div>

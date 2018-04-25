@@ -18,9 +18,15 @@
                         "password" : password,
                         "rememberMe" : true
                     };
-                    loginService.loadLoginInfo(userInfo,function(data){
+                    loginService.getToken(userInfo,function(data){
                         console.log(data)
                         if (data.msg == "请求成功"){
+                            console.log(userInfo.username)
+                            loginService.loadLoginInfo(data.data.id_token,userInfo.username,function (info) {
+                                setCookie("user",info);
+                                setCookie("token",data.data.id_token);
+                                console.log(info.data)
+                            })
                             successTip("登录成功！");
                             window.setTimeout("location.href='http://localhost:8090'",1200);
                         }
@@ -66,10 +72,17 @@
             });
         }
 
+        //写Cookie
+        function setCookie(name,value) {
+            var exp=new Date();
+            exp.setTime(exp.getTime()+2*24*60*60*1000);//有效时间
+            document.cookie=name+"="+JSON.stringify(value);
+        }
+
     }]);
 
     app.service("loginService", ["$http","domain",function ($http,domain) {
-        this.loadLoginInfo = function (userInfo,callback) {
+        this.getToken = function (userInfo,callback) {
             $http({
                 method:'POST',
                 url:domain + '/api/jwt-token',
@@ -79,6 +92,23 @@
                     callback(data.data);
                 }
             });
+        }
+
+        this.loadLoginInfo = function (token,username,callback) {
+            $http({
+                url:domain + '/api/select/username',
+                method:'POST',
+                headers : {
+                    'Authorization' : "Bearer "+token
+                },
+                params: {
+                    username:username
+                }
+            }).then(function (data) {
+                if (callback){
+                    callback(data.data);
+                }
+            })
         }
     }]);
 })();

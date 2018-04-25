@@ -1,86 +1,75 @@
 <div class="detail-container">
     <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-8 main">
             <div class="main-top">
                 <a class="user-icon" href="#/user/{{user.userId}}" target="_blank"><img src="../image/user/user01.jpg" alt=""></a>
                 <a ui-sref="editUser" class="btn my-btn-message">
-                    编辑资料
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    <span>编辑资料</span>
                 </a>
                 <div class="title">
-                    <a href="#/user/{{user.userId}}" class="name">{{user.nickname}}</a>
+                    <a href="#/user/{{user.userId}}" class="name">南京的雨</a>
                 </div>
                 <div class="info">
-                    <span>南京的雨</span>
+                    <span>女</span>
+                    <span>•</span>
+                    <span>江苏南京</span>
+                    <span>/</span>
+                    <span>正在找工作</span>
                 </div>
             </div>
-            <!--<ul id="topicTab" class="nav nav-tabs">
-                <li class="this-active">
-                    <a href="javascript:void(0);" ng-click="selectAllArticle()">
-                        <img ng-src="img/svg/article.svg">
-                        文章
+           <!-- <br style="border: 1px solid salmon">-->
+            <div class="col-md-12" style="margin-top: 2%">
+                <div class="col-md-2 title" style="color: #969696">登录账号</div>
+                <div class="col-md-10 description">13456789011</div>
+            </div>
+            <div class="col-md-12" style="margin-top: 2%">
+                <div class="col-md-2 title" style="color: #969696">个人简介</div>
+                <div class="col-md-10 description">您还没有留下什么痕迹哦~</div>
+            </div>
+            <ul id="topicTab" class="nav nav-tabs" ng-init='activeTab=1' style="margin-top: 15%">
+                <li ng-class='{active:activeTab==1}' ng-click='activeTab=1'>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                        简历中心
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" ng-click="selectAllNew()">
-                        <img ng-src="img/svg/bells.svg">
-                        动态
+                <li ng-class='{active:activeTab==2}' ng-click='activeTab=2'>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                        投递箱
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" ng-click="selectAllComment()">
-                        <img ng-src="img/svg/message.svg">
-                        最新评论
+                <li ng-class='{active:activeTab==3}' ng-click='activeTab=3'>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                        邀请函
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" ng-click="selectHots()">
-                        <img ng-src="img/svg/fire.svg">
-                        热门
+                <li ng-class='{active:activeTab==4}' ng-click='activeTab=4'>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        收藏夹
                     </a>
                 </li>
-            </ul>-->
-            <!--文章列表-->
+            </ul>
             <div class="list-container">
-                <!--<ul class="note-list">
-                    <li ng-repeat="article in articles track by $index" id="{{article.articleCustom.articleId}}"
-                        class="{{article.articleCustom.thumbnail != null ? 'have-img' : ''}}">
-                        <a class="wrap-img" href="#/article/{{article.articleCustom.articleId}}" target="_blank">
-                            <img ng-src="{{article.articleCustom.thumbnail}}">
-                        </a>
-                        <div class="content">
-                            <div class="author">
-                                <a class="avatar" href="#" target="_blank">
-                                    <img ng-src="{{user.head}}" alt="">
-                                </a>
-                                <div class="name">
-                                    <a href="#" class="blue-link" target="_blank">
-                                        {{user.nickname}}
-                                    </a>
-                                </div>
-                                <a href="#/article/{{article.articleCustom.articleId}}" class="title" target="_blank">
-                                    {{article.articleCustom.title}}
-                                </a>
-                                <p class="abstract">{{article.articleCustom.content|contentFilter}}</p>
-                                <div class="meta">
-                                    <a target="_blank" href="#/article/{{article.articleCustom.articleId}}">
-                                        <i class="fa fa-eye"></i> {{article.articleCustom.readCount}}
-                                    </a>
-                                    <a target="_blank" href="#/article/{{article.articleCustom.articleId}}#comments">
-                                        <i class="fa fa-comment"></i> {{article.articleCustom.commentCount}}
-                                    </a>
-                                    <span><i class="fa fa-heart"></i> {{article.articleCustom.likeCount}}</span>
-                                    &lt;!&ndash;<span><i class="fa fa-dollar"></i> {{article.play_user}}</span>&ndash;&gt;
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <a href="#" class="load-more">加载更多</a>-->
+                <div ng-show='activeTab==1'>
+                    <div>我是tab1</div>
+                   <!-- <a href="#" class="load-more">加载更多</a>-->
+                </div>
+                <div ng-show='activeTab==2'>
+                    <div>我是tab2</div>
+                </div>
+                <div ng-show='activeTab==3'>
+                    <div>我是tab3</div>
+                </div>
+                <div ng-show='activeTab==4'>
+                    <div>我是tab4</div>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="title">个人简介</div>
-            <div class="description">您还没有留下什么痕迹哦~</div>
-        </div>
+        <div class="col-md-2"></div>
     </div>
 </div>

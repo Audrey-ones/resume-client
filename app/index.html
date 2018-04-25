@@ -70,22 +70,22 @@
     </a>
     <!-- 右上角-->
     <!--登录显示我的主页-->
-    <a class="btn home-btn" href="write.html" ng-if="!token">
+    <a class="btn home-btn" href="write.html" ng-if="token">
       我的主页
     </a>
-    <!--<a href="register.html" class="btn sign-up" ng-if="!token">注册</a>
-    <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>-->
+    <a href="register.html" class="btn sign-up" ng-if="!token">注册</a>
+    <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>
     <div class="user" style="position: relative">
-      <div data-hover="dropdown" ng-if="!token">
+      <div data-hover="dropdown" ng-if="token">
         <a class="avatar user-icon">
           <img ng-src="image/user/user01.jpg" alt="120">
         </a>
-        <ul>
+        <ul ng-controller="outCtrl">
           <li ui-sref="userPage">求职中心</li>
           <li>我的简历</li>
           <li>修改密码</li>
           <li>账户绑定</li>
-          <li>退出</li>
+          <li ng-click="signUp()">退出</li>
         </ul>
       </div>
     </div>
@@ -98,23 +98,23 @@
               <i></i>
             </a>
           </li>
-          <li ng-if="!token">
+          <li>
             <a ui-sref="templateStore">
               <span>模板商城</span>
             </a>
           </li>
-          <li ng-if="!token">
+          <li>
             <a href="/">
               <span>在线制作</span>
             </a>
           </li>
-          <li ng-if="!token">
+          <li>
             <a href="/">
               <span>简历代写</span>
             </a>
           </li>
-          <li ng-if="!token">
-            <a href="#/message">
+          <li>
+            <a href="#/">
               <span>职场说</span>
             </a>
           </li>
@@ -126,6 +126,8 @@
 
 <div ui-view></div>
 
-<script src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/homePageController.js"></script>
+
 </body>
 </html>

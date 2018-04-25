@@ -2,43 +2,86 @@
     <div class="row">
         <div class="col-md-8 main">
             <div class="list-container">
-                <form class="form-horizontal" style="width: 90%">
+                <form class="form-horizontal" style="width: 90%;">
                     <div class="form-group" style="margin-top: 60px">
-                        <label class="col-sm-6"></label>
+                        <div class="col-sm-6"></div>
                         <div id="headDiv" class="col-sm-6">
                             <img class="img-circle" src="../image/user/user01.jpg" id="userHead" title="点击更改头像"
-                                 onclick="getPicture()" style="width: 80px;height: 80px;margin-top: -30px">
+                                 onclick="getPicture()" style="width: 80px;height: 80px;margin-top: -25%">
                         </div>
                         <input type="file" file-model="myFile" onchange="setImage(this,headDiv,userHead)" id="photo" style="display: none"/>
                     </div>
-                    <div class="form-group" style="margin-top: 20px">
-                        <label for="name" class="col-sm-3 control-label">昵称：</label>
+                    <div class="form-group" style="margin-top: 8%;">
+                        <label for="name" class="col-sm-3 control-label" style="text-align: center">
+                            <span>昵称</span>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="name"
                                    ng-model="person.nickname"><!--placeholder="{{person.nickname}}"-->
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">个人介绍：</label>
+
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label class="col-sm-3 control-label" style="text-align: center">
+                            <span>性别</span>
+                            <i class="fa fa fa-male" aria-hidden="true"></i>
+                        </label>
+                        <div class="col-sm-9">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                <i class="fa fa-mars" aria-hidden="true" style="font-size: 16px;color: #00b3ee;font-weight: 700"></i>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <i class="fa fa-venus" aria-hidden="true" style="font-size: 16px;color: #e662d2;font-weight: 700"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label for="name" class="col-sm-3 control-label" style="text-align: center">
+                            <span>所在城市</span>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                   ng-model="person.nickname"><!--placeholder="{{person.nickname}}"-->
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label for="name" class="col-sm-3 control-label" style="text-align: center">
+                            <span>求职状态</span>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="form-control">
+                                <option>正在找工作</option>
+                                <option>在职</option>
+                                <option>离职</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label class="col-sm-3 control-label" style="text-align: center">
+                            <span>个人介绍</span>
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </label>
                         <div class="col-sm-9">
                             <textarea class="form-control" rows="3"
-                                      ng-model="person.description"></textarea><!--placeholder="{{person.description}}"-->
+                                      ng-model="person.description"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 250px;width: 30%">保存</button>
+                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 250px;width: 30%;padding: 8px">保存</button>
                         </div>
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 50px;width: 30%" ui-sref="userPage">返回</button>
+                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 50px;width: 30%;padding: 8px;color: #449d44;background-color: #ffffff;border: 1px solid #449d44;outline:none;" ui-sref="userPage">取消</button>
                         </div>
                     </div>
-                    <!--<div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success btn-default"
-                                    style="margin-left: 175px;width: 30%" ng-click="update(person)">修改</button>
-                        </div>
-                    </div>-->
                 </form>
             </div>
         </div>

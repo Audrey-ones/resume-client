@@ -11,7 +11,7 @@
                 .state('homePage', {
                     url: '/homePage',
                     templateUrl: 'page/homePage.html',
-                    /*controller: "homePageController"*/
+                    controller: "homePageController"
                 })
                 .state('templateStore', {
                     url: '/templateStore',

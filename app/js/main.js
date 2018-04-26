@@ -21,7 +21,7 @@
                 .state('userPage', {
                     url: '/userPage',
                     templateUrl: 'page/userPage.html',
-                    /*controller: "homePageController"*/
+                    controller: "userPageController"
                 })
                 .state('editUser', {
                     url: '/editUser',

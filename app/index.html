@@ -78,7 +78,7 @@
     <div class="user" style="position: relative">
       <div data-hover="dropdown" ng-if="token">
         <a class="avatar user-icon">
-          <img ng-src="image/user/user01.jpg" alt="120">
+          <img ng-src={{avatar}} alt="我的头像"/>
         </a>
         <ul ng-controller="outCtrl">
           <li ui-sref="userPage">求职中心</li>
@@ -128,6 +128,7 @@
 
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/homePageController.js"></script>
+<script type="text/javascript" src="js/userPageController.js"></script>
 
 </body>
 </html>

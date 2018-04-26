@@ -23,9 +23,8 @@
                         if (data.msg == "请求成功"){
                             console.log(userInfo.username)
                             loginService.loadLoginInfo(data.data.id_token,userInfo.username,function (info) {
-                                setCookie("user",info);
+                                setCookie("user",info.data);
                                 setCookie("token",data.data.id_token);
-                                console.log(info.data)
                             })
                             successTip("登录成功！");
                             window.setTimeout("location.href='http://localhost:8090'",1200);

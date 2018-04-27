@@ -11,10 +11,13 @@
         if (getCookie('token')){
             $rootScope.token=JSON.parse(getCookie('token'));
         }
-        userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
-            $rootScope.avatar = data.avatar;
-            /*console.log(data.avatar)*/
-        })
+
+        if (getCookie('user')){
+            userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
+                $rootScope.avatar = data.avatar;
+                console.log(data)
+            })
+        }
 
         //成功的提示框
         function successTip(tip){
@@ -80,6 +83,7 @@ function getCookie(name) {
             });
         }
 
+        //退出登录时，移除cookie
         $scope.signUp=function () {
             delCookie('user');
             delCookie('token');

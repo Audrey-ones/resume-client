@@ -3,30 +3,30 @@
         <div class="col-md-1"></div>
         <div class="col-md-8 main">
             <div class="main-top">
-                <a class="user-icon" href="#/user/{{user.userId}}" target="_blank"><img src="../image/user/user01.jpg" alt=""></a>
+                <a class="user-icon" href="#/user/{{user.id}}" target="_blank"><img ng-src="{{user.avatar}}" alt=""></a>
                 <a ui-sref="editUser" class="btn my-btn-message">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                     <span>编辑资料</span>
                 </a>
                 <div class="title">
-                    <a href="#/user/{{user.userId}}" class="name">南京的雨</a>
+                    <a href="#/user/{{user.id}}" class="name">{{user.nickname}}</a>
                 </div>
                 <div class="info">
                     <span>女</span>
                     <span>•</span>
-                    <span>江苏南京</span>
+                    <span>{{user.city}}</span>
                     <span>/</span>
-                    <span>正在找工作</span>
+                    <span>{{jobStatus}}</span>
                 </div>
             </div>
            <!-- <br style="border: 1px solid salmon">-->
             <div class="col-md-12" style="margin-top: 2%">
                 <div class="col-md-2 title" style="color: #969696">登录账号</div>
-                <div class="col-md-10 description">13456789011</div>
+                <div class="col-md-10 description">{{user.username}}</div>
             </div>
             <div class="col-md-12" style="margin-top: 2%">
                 <div class="col-md-2 title" style="color: #969696">个人简介</div>
-                <div class="col-md-10 description">您还没有留下什么痕迹哦~</div>
+                <div class="col-md-10 description">{{user.extra}}~</div>
             </div>
             <ul id="topicTab" class="nav nav-tabs" ng-init='activeTab=1' style="margin-top: 15%">
                 <li ng-class='{active:activeTab==1}' ng-click='activeTab=1'>

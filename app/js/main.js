@@ -26,7 +26,7 @@
                 .state('editUser', {
                     url: '/editUser',
                     templateUrl: 'page/editUser.html',
-                    /*controller: "homePageController"*/
+                    controller: "editUserController"
                 })
 
         }]);

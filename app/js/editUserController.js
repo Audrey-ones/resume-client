@@ -1,40 +1,39 @@
 (function () {
     'use strict';
     var app = angular.module('resumeApp');
-    app.controller("userPageController",["$scope","$rootScope","userPageService",function ($scope,$rootScope,userPageService) {
+    app.controller("editUserController",["$scope","$rootScope","editUserService","userPageService",function ($scope,$rootScope,editUserService,userPageService) {
         userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
             $scope.user=data;
-            initUserInfo(data);
-        });
-
-        //初始化用户信息
-        function initUserInfo(data) {
             if (data.jobStatus == 0){
-                $scope.jobStatus = "正在找工作";
+                $("#job_status").val(data.jobStatus);
             }
             if (data.jobStatus == 1){
-                $scope.jobStatus = "在职";
+                $("#job_status").val(data.jobStatus);
             }
             if (data.jobStatus == 2){
-                $scope.jobStatus = "离职";
+                $("#job_status").val(data.jobStatus);
             }
             if (data.extra == null){
                 $scope.user.extra = "您还没有留下什么痕迹哦~"
             }
-        }
+
+            $scope.updateUser = function (user) {
+                editUserService.updateUserInfo(user,$rootScope.token,function (data) {
+
+                })
+            }
+        })
     }]);
 
-    app.service("userPageService",["$http","domain",function ($http,domain) {
-        this.loadUserInfo = function (username,token,callback) {
+    app.service("editUserService",["$http","domain",function ($http,domain) {
+        this.updateUserInfo = function (user,token,callback) {
             $http({
                 url : domain + '/api/select/info',
                 method : 'POST',
                 headers : {
                     'Authorization' : "Bearer "+token
                 },
-                params: {
-                    username:username
-                }
+                data : JSON.stringify(user)
             }).then(function (data) {
                 if (callback){
                     callback(data.data.data)

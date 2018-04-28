@@ -2,6 +2,10 @@
     'use strict';
     var app = angular.module('resumeApp');
     app.controller("userPageController",["$scope","$rootScope","userPageService",function ($scope,$rootScope,userPageService) {
+        if ($rootScope.token == undefined){
+            location.href='http://localhost:8090';
+        }
+
         userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
             $scope.user=data;
             initUserInfo(data);
@@ -17,9 +21,6 @@
             }
             if (data.jobStatus == 2){
                 $scope.jobStatus = "离职";
-            }
-            if (data.extra == null){
-                $scope.user.extra = "您还没有留下什么痕迹哦~"
             }
         }
     }]);

@@ -38,5 +38,29 @@
         .constant('domain', "http://localhost:8080");//把服务器地址定义为一个全局变量
 })();
 
+(function () {
+    returnTop();
+    //返回顶部方法
+    function returnTop() {
+        $("#go_top").hide();
+        $(function () {
+            //检测屏幕高度
+            var height=$(window).height();
+            //scroll() 方法为滚动事件
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>height){
+                    $("#go_top").fadeIn(500);
+                }else{
+                    $("#go_top").fadeOut(500);
+                }
+            });
+            $("#go_top").click(function(){
+                $('body,html').animate({scrollTop:0},500);
+                return false;
+            });
+        });
+    }
+})();
+
 
 

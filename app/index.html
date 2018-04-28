@@ -26,10 +26,9 @@
   <style type="text/css">
     .user ul{
       width: 112px;
-      /*background: #ffffff;*/
-      /*background: yellow;*/
       position: absolute;
-      right: 95px;
+      /*right: 95px;*/
+      right: 75px;
       top: 40px;
       padding-top: 20px;
       display: none;
@@ -54,14 +53,18 @@
     .user:hover ul{
       display: block;
     }
+    #go_top{
+      position:fixed;
+      left: 90%;
+      bottom: 50px;
+      color: #57ad68;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
   </style>
 
 <body ng-app="resumeApp" ng-controller="homePageController">
-<!--<div>
-  <button ui-sref="homePage">HomePage测试</button>
-  <a href="sign_in.html">登录测试</a>
-  <a href="register.html">注册测试</a>
-</div>-->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="width-limit">
     <!--左上角-->
@@ -70,9 +73,9 @@
       <span style="font-family: STLiti;font-size: 18px">PERSONAL RESUME</span>
     </a>
     <!-- 右上角-->
-    <!--登录显示我的主页-->
-    <a class="btn home-btn" href="write.html" ng-if="token">
-      我的主页
+    <!--登录显示用户昵称-->
+    <a class="btn home_nickname" ng-if="token">
+      {{nickname}}
     </a>
     <a href="register.html" class="btn sign-up" ng-if="!token">注册</a>
     <a href="sign_in.html" class="btn log-in"  ng-if="!token">登录</a>
@@ -82,11 +85,26 @@
           <img ng-src={{avatar}} alt="我的头像"/>
         </a>
         <ul ng-controller="outCtrl">
-          <li ui-sref="userPage">求职中心</li>
-          <li>我的简历</li>
-          <li>修改密码</li>
-          <li>账户绑定</li>
-          <li ng-click="signUp()">退出</li>
+          <li ui-sref="userPage">
+            <span><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+            <span>求职中心</span>
+          </li>
+          <li>
+            <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+            <span>我的简历</span>
+          </li>
+          <li>
+            <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+            <span>账户绑定</span>
+          </li>
+          <li>
+            <span><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
+            <span>修改密码</span>
+          </li>
+          <li ng-click="signUp()">
+            <span>退出</span>
+            <span><i class="fa fa-forward" aria-hidden="true"></i></span>
+          </li>
         </ul>
       </div>
     </div>
@@ -125,7 +143,13 @@
   </div>
 </nav>
 
-<div ui-view></div>
+<div ui-view style="padding-top: 100px;"></div>
+
+<!--返回顶部-->
+<div id="go_top">
+  <i class="fa fa-chevron-circle-up" aria-hidden="true" style="font-size: 55px;"></i>
+  <div>BACK TOP</div>
+</div>
 
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/homePageController.js"></script>

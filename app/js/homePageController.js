@@ -14,29 +14,10 @@
 
         if (getCookie('user')){
             userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
+                $rootScope.nickname = data.nickname;
                 $rootScope.avatar = data.avatar;
-                console.log(data)
+                /*console.log(data)*/
             })
-        }
-
-        //成功的提示框
-        function successTip(tip){
-            swal({
-                title:tip,
-                type:"success",
-                timer:1000,
-                showConfirmButton:false
-            });
-        }
-
-        //有误的提示框
-        function errorTip(tip){
-            swal({
-                title:tip,
-                type:"error",
-                timer:1000,
-                showConfirmButton:false
-            });
         }
 
     }]);
@@ -57,6 +38,26 @@
     }]);
 })();
 
+//成功的提示框
+function successTip(tip){
+    swal({
+        title:tip,
+        type:"success",
+        timer:1000,
+        showConfirmButton:false
+    });
+}
+
+//有误的提示框
+function errorTip(tip){
+    swal({
+        title:tip,
+        type:"error",
+        timer:1000,
+        showConfirmButton:false
+    });
+}
+
 
 //读取cookies
 function getCookie(name) {
@@ -73,15 +74,6 @@ function getCookie(name) {
     'use strict';
     var app = angular.module('resumeApp');
     app.controller("outCtrl", ["$scope",function ($scope) {
-        //成功的提示框
-        function successTip(tip){
-            swal({
-                title:tip,
-                type:"success",
-                timer:1000,
-                showConfirmButton:false
-            });
-        }
 
         //退出登录时，移除cookie
         $scope.signUp=function () {

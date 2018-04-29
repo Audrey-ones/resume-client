@@ -222,7 +222,7 @@ nav .home_nickname:hover{
 
 .detail-container{
     margin:-1% auto 0;
-    padding-left: 15px;
+    padding-left: 30px;
     padding-right: 15px;
 }
 
@@ -1425,3 +1425,48 @@ ul {
 label{
     color: #969696;
 }
+
+.personal,.message{
+    width: 960px;
+    margin: 80px auto;
+}
+
+.message .aside,.personal .aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 86px 0 0px;
+    padding: 0 0 30px;
+    width: 280px;
+    overflow: auto;
+}
+
+/*用户设置页面tab面板*/
+#aside ul {
+    list-style: none;
+}
+
+#aside ul li.active a {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+#aside ul a{
+    height: auto;
+    padding: 10px 25px;
+    line-height: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#aside ul li span i {
+    margin-right: 15px;
+    font-size: 24px;
+    color: #737373;
+    vertical-align: middle;
+}
+
+#aside ul a:hover {
+    background-color: #f0f0f0;
+}
+

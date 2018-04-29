@@ -24,9 +24,9 @@
                     controller: "userPageController"
                 })
                 .state('editUser', {
-                    url: '/editUser',
-                    templateUrl: 'page/editUser.html',
-                    controller: "editUserController"
+                    url: '/userSetting',
+                    templateUrl: 'page/userSetting.html',
+                    controller: "userSettingController"
                 })
 
         }]);

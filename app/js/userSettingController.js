@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     var app = angular.module('resumeApp');
-    app.controller("editUserController",["$scope","$rootScope","$state","editUserService","userPageService",
-        function ($scope,$rootScope,$state,editUserService,userPageService) {
+    app.controller("userSettingController",["$scope","$rootScope","$state","userSettingService","userPageService",
+        function ($scope,$rootScope,$state,userSettingService,userPageService) {
         if ($rootScope.token == undefined){
             location.href='http://localhost:8090';
         }
@@ -21,7 +21,7 @@
             $scope.updateUser = function (user) {
                 /*console.log(user)*/
                 user.jobStatus = $("#job_status").val();
-                editUserService.updateUserInfo(user,$rootScope.token,function (userData) {
+                userSettingService.updateUserInfo(user,$rootScope.token,function (userData) {
                     successTip("修改成功！");
                     $state.go('userPage');
                 })
@@ -39,7 +39,7 @@
         })
     }]);
 
-    app.service("editUserService",["$http","domain",function ($http,domain) {
+    app.service("userSettingService",["$http","domain",function ($http,domain) {
         this.updateUserInfo = function (user,token,callback) {
             $http({
                 url : domain + '/api/update/info',
@@ -58,3 +58,42 @@
     }]);
 
 })();
+
+/*头像预览*/
+function getPicture() {
+    $('#photo').click();
+}
+
+function setImage(docObj,localImageId,imgObjPreview) {
+    var f=$(docObj).val();
+    f=f.toLowerCase();
+    var strRegex=".bmp|jpg|png|jpeg$";
+    var re=new RegExp(strRegex);
+    if (re.test(f.toLowerCase())){
+
+    }else {
+        alert("请选择正确格式的图片");
+        file=$('#photo');
+        file.after(file.clone());
+        file.remove();
+        return false;
+    }
+    if (docObj.files&& docObj.files[0]){
+        imgObjPreview.src=window.URL.createObjectURL(docObj.files[0]);
+    }else{
+        docObj.select();
+        var imgSrc=document.selection.createRange().text;
+        try {
+            localImageId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+            localImageId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src=imgSrc;
+        }catch (e){
+            alert("你上传的图片格式不正确，请重新选择");
+            return false;
+        }
+
+        imgObjPreview.style.display='none';
+        document.selection.empty();
+    }
+
+    return true;
+}

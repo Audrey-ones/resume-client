@@ -1,5 +1,5 @@
 <div style="margin-top: 80px">
-    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
     <div class="col-md-2" id="aside">
         <ul ng-init='activeTab=1'>
             <li ng-class='{active:activeTab==1}'>
@@ -25,7 +25,7 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-8" >
+    <div class="col-md-9" >
         <div ng-show='activeTab==1'>
             <div class="list-container">
                 <form class="form-horizontal" style="width: 60%;">
@@ -33,11 +33,11 @@
                         <div class="col-sm-5"></div>
                         <div id="headDiv" class="col-sm-6">
                             <img class="img-circle" ng-src="{{user.avatar}}" id="userHead" title="点击更改头像"
-                                 onclick="getPicture()" style="width: 80px;height: 80px;margin-top: -25%">
+                                 onclick="getPicture()" style="width: 120px;height: 120px;margin-top: -25%;border: 1px solid#f0f0f0">
                         </div>
                         <input type="file" file-model="myFile" onchange="setImage(this,headDiv,userHead)" id="photo" style="display: none"/>
                     </div>
-                    <div class="form-group" style="margin-top: 8%;">
+                    <div class="form-group" style="margin-top: 6%;">
                         <label for="name" class="col-sm-3 control-label" style="text-align: center">
                             <span>昵称</span>
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -105,7 +105,7 @@
                             <button type="submit" class="btn btn-success btn-default" ng-click="updateUser(user)" style="margin-left: 220px;width: 33%;padding: 8px">保存</button>
                         </div>
                         <div class="col-sm-5">
-                            <button type="submit" class="btn btn-success btn-default" style="margin-left: 50px;width: 43%;padding: 8px;color: #449d44;background-color: #ffffff;border: 1px solid #449d44;outline:none;" ui-sref="userPage">取消</button>
+                            <button type="submit" ng-click="reset()" class="btn btn-success btn-default" style="margin-left: 50px;width: 43%;padding: 8px;color: #449d44;background-color: #ffffff;border: 1px solid #449d44;outline:none;">重置</button>
                         </div>
                     </div>
                 </form>

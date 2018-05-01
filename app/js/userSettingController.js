@@ -23,8 +23,15 @@
                 user.jobStatus = $("#job_status").val();
                 userSettingService.updateUserInfo(user,$rootScope.token,function (userData) {
                     successTip("修改成功！");
-                    $state.go('userPage');
+                    setTimeout(function () {
+                        refresh();
+                    },1000);
+                    /*$state.go('userPage');*/
                 })
+            };
+
+            $scope.reset = function () {
+                refresh();
             }
 
             //成功的提示框
@@ -58,6 +65,10 @@
     }]);
 
 })();
+
+function refresh() {
+    window.location.reload();
+}
 
 /*头像预览*/
 function getPicture() {

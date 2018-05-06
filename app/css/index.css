@@ -737,12 +737,13 @@ footer .icp {
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-box-shadow: 5px 6px 3px #888888;
-    box-shadow: 5px 6px 3px #888888;
+    /*box-shadow: 5px 6px 3px #888888;*/
 }
 
 .thumbnail:hover {
     -moz-box-shadow: 10px 10px 5px #888888;
-    box-shadow: 10px 10px 5px #888888;
+    /*box-shadow: 10px 10px 5px #888888;*/
+    transform: translateY(-5px);
 }
 
 .wrap .thumbnail img {
@@ -1550,5 +1551,24 @@ label{
 .slider-next {
     left: 100%;
     margin-left: -28px;
+}
+
+.hr_desc{
+    display: inline-block;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    padding:0 8px
+}
+
+.tip_panel{
+    width: 100px;
+    height: 100px;
+    background-color: #00CCFF;
+    display: none;
+}
+
+.resume_template:hover .tip_panel{
+    background-color: #00b7ee;
+    display: block;
 }
 

@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -156,7 +157,7 @@
          */
         function pre() {
             var preIndex = currentIndex;
-            currentIndex = (--currentIndex + length) % length;
+            currentIndex = (&#45;&#45;currentIndex + length) % length;
             play(preIndex, currentIndex);
         }
         /**
@@ -199,7 +200,7 @@
     });
 </script>
 </body>
-    <!--<title>无缝轮播图</title>
+    &lt;!&ndash;<title>无缝轮播图</title>
     <style>
         *{margin: 0;padding:0; }
         ul{list-style: none;}
@@ -324,5 +325,49 @@
 
     })
 </script>
-</body>-->
+</body>&ndash;&gt;
+</html>-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Test Page</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cent{
+            background:#0CF; height:200px; width:100px;
+        }
+        .cs{
+            width:100px;
+            height:200px;
+            background:#F09;
+            top:0px;
+            position:absolute;
+            opacity: 0;
+            display: block;
+            font-size: 12px;
+            transition: 0.3s;
+            -webkit-transition: .5s;
+            -moz-transition: .5s;
+        }
+        .cent:hover .cs{
+            color: #656e73;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="cent">
+    This is the cent div
+    <div class="cs">
+        <p>this is a cs div</p>
+    </div>
+</div>
+
+</body>
 </html>

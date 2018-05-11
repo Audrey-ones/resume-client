@@ -16,7 +16,7 @@
                 .state('templateStore', {
                     url: '/templateStore',
                     templateUrl: 'page/templateStore.html',
-                    /*controller: "homePageController"*/
+                    controller: "templateStoreCtrl"
                 })
                 .state('userPage', {
                     url: '/userPage',
@@ -27,6 +27,21 @@
                     url: '/userSetting',
                     templateUrl: 'page/userSetting.html',
                     controller: "userSettingController"
+                })
+                .state('singleTemplate',{
+                    url : '/singleTemplate:templateId',
+                    templateUrl : "page/singleTemplate.html",
+                    controller : 'singleTemplateCtrl'
+                })
+                .state('resumeWriting',{
+                    url : '/resumeWriting',
+                    templateUrl : "page/resumeWriting.html",
+                    controller : 'resumeWritingCtrl'
+                })
+                .state('resumeInfo',{
+                    url : '/resumeInfo',
+                    templateUrl : "page/resumeInfo.html",
+                    controller : 'resumeInfoCtrl'
                 })
 
         }]);

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
   <title>主页 - RESUME</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="pragma" content="no-cache"/>
   <meta http-equiv="cache-control" content="no-cache"/>
   <meta http-equiv="expires" content=""/>
@@ -94,6 +96,10 @@
             <span><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
             <span>个人中心</span>
           </li>
+          <li ui-sref="resumeInfo">
+            <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+            <span>简历信息</span>
+          </li>
           <!--<li>
             <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
             <span>我的简历</span>
@@ -133,7 +139,7 @@
             </a>
           </li>
           <li>
-            <a href="/">
+            <a ui-sref="resumeWriting">
               <span>简历代写</span>
             </a>
           </li>
@@ -148,7 +154,7 @@
   </div>
 </nav>
 
-<div ui-view style="padding-top: 100px;"></div>
+<div ui-view style="padding-top: 100px; "></div>
 
 <!--返回顶部-->
 <div id="go_top">
@@ -158,8 +164,12 @@
 
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/homePageController.js"></script>
+<script type="text/javascript" src="js/templateStoreCtrl.js"></script>
 <script type="text/javascript" src="js/userPageController.js"></script>
 <script type="text/javascript" src="js/userSettingController.js"></script>
+<script type="text/javascript" src="js/singleTemplateCtrl.js"></script>
+<script type="text/javascript" src="js/resumeWritingCtrl.js"></script>
+<script type="text/javascript" src="js/resumeInfoCtrl.js"></script>
 
 </body>
 </html>

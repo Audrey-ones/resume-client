@@ -6,25 +6,28 @@
         <hr>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2" style="width: 20%">
+    <div ng-repeat="template in templateList" ng-click="toSingleTemplate(template.templateId)" class="col-lg-2 col-md-2 col-sm-2" style="width: 20%">
         <div class="thumbnail resume_template">
-            <a href="#" target="_blank">
-                <img src="../image/index.png" style="width: 100%;height: 125px">
+            <a>
+                <div style="width: 100%;height: 250px;text-align: center;">
+                    <img ng-src="{{template.templateUrl}}" style="width: auto;height: auto;max-height: 100%;max-width: 100%">
+                </div>
+                <!--<img ng-src="{{template.templateUrl}}" style="width: 100%;height: 125px">-->
             </a>
             <div class="caption">
-                <a href="#" target="_blank">
-                    <span>模板名字-起风了</span>
+                <a>
+                    <span>{{template.templateName}}</span>
                     <span style="float: right;font-size: 16px">¥9.8</span>
                 </a>
                 <!--<p>作者：岁月无痕</p>-->
                 <div style="clear: both;margin-top: 10px;text-align: center">
-                    <a href="#" style="padding-right: 30px;">
+                    <a>
                         <i class="fa fa-download" style="color: #57ad68"></i>
-                        50人下载
+                        {{template.downloadCount}}人下载
                     </a>
-                    <a href="#">
+                    <a>
                         <i class="fa fa-heart" style="color: #F27474"></i>
-                        31人喜欢
+                        {{template.likeCount}}人喜欢
                     </a>
                 </div>
             </div>

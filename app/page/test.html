@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mysteve {width:200px; height:30px; border:1px solid red;}
+        #add {width:200px; height:30px; border:1px solid blue; display:none;}
+    </style>
+</head>
+<body>
+
+<div id="mysteve">mysteve</div>
+<div id="add">add</div>
+<script>
+    window.onload = function(){
+        var ms = document.getElementById("mysteve");
+        var add = document.getElementById("add");
+        ms.onmouseover = function(){
+            add.style.display = "block";
+        };
+        ms.onmouseout = function(){
+            add.style.display = "none";
+        };
+    };
+</script>
+</body>
+</html>

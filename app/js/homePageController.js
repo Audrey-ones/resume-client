@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     var app = angular.module('resumeApp');
-    app.controller("homePageController", ["$scope", "homePageService","userPageService","$rootScope", "domain",function ($scope, homePageService,userPageService, $rootScope,domain) {
+    app.controller("homePageController", ["$scope", "homePageService","userPageService","$rootScope","$state",function ($scope, homePageService,userPageService, $rootScope,$state) {
         if (getCookie('user')){
             $rootScope.user=JSON.parse(getCookie('user'));
         }
@@ -20,20 +20,29 @@
             })
         }
 
+        homePageService.loadRecommendTemplate(function (data) {
+            $scope.recommendTemplates = data;
+            /*console.log(data)*/
+        })
+
+        $scope.clickRecommendTemplate = function (recommendTemplate) {
+            var templateId = recommendTemplate.templateId;
+            $state.go('singleTemplate',{templateId: templateId});
+        }
+
     }]);
 
     app.service("homePageService", ["$http","domain",function ($http,domain) {
-        /*this.loadUserInfo = function (userInfo,callback) {
-            /!* $http({
-                 method:'POST',
-                 url:domain + '/api/jwt-token',
-                 data : JSON.stringify(userInfo)
+        this.loadRecommendTemplate = function (callback) {
+             $http({
+                 method:'GET',
+                 url:'/json/recommendTemplateList.json',
              }).then(function(data){
                  if (callback) {
                      callback(data.data);
                  }
-             });*!/
-        }*/
+             });
+        }
 
     }]);
 })();

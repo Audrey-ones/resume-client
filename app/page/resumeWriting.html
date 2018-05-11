@@ -1,5 +1,5 @@
-<div class="imageIndex" ng-controller="imageCtrl">
-    <div class="slider">
+<div style="width: 100%;height: 450px;background: rgba(87, 173, 104, 0.65);">
+    <!--<div class="slider">
         <ul class="slider-main">
             <li class="slider-panel">
                 <a href="#" target="_blank">
@@ -28,41 +28,42 @@
                 <a class="slider-next" href="javascript:;;">></a>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12">
-    <hr>
+
+<div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 10px;background: #fbfbfb">
     <div style="text-align: center;padding-bottom: 10px">
-        <span style="font-size: 30px;">推荐模板</span>
-        <a ui-sref="templateStore" class="btn btn-success my-btn-success" style="margin-left: 10px;">更多模板>></a>
+        <hr>
+        <h2>急速服务通道</h2>
+        <h5 style="color: #959595">1小时内对接，专人审核，为你保证服务质量</h5>
         <hr>
     </div>
-
-    <div ng-repeat="recommendTemplate in recommendTemplates" ng-click="clickRecommendTemplate(recommendTemplate)" class="col-lg-2 col-md-2 col-sm-2" style="width: 20%">
-        <div class="thumbnail">
-            <a>
-                <div style="width: 100%;height: 250px;text-align: center;">
-                    <img ng-src="{{recommendTemplate.templateUrl}}" style="width: auto;height: auto;max-height: 100%;max-width: 100%">
-                </div>
-
-            </a>
-            <div class="caption">
-                <a>
-                    <span>{{recommendTemplate.templateName}}</span>
-                    <span style="float: right;font-size: 16px">¥{{recommendTemplate.price}}</span>
-                </a>
-                <!--<p>作者：岁月无痕</p>-->
-                <div style="clear: both;margin-top: 10px;text-align: center">
-                    <a style="padding-right: 30px;">
-                        <i class="fa fa-download" style="color: #57ad68"></i>
-                        {{recommendTemplate.downloadCount}}人下载
-                    </a>
-                    <a>
-                        <i class="fa fa-heart" style="color: #F27474"></i>
-                        {{recommendTemplate.likeCount}}人喜欢
-                    </a>
-                </div>
-            </div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="thumbnail" style="border: 1px solid #57ad68;text-align: center;cursor: pointer;min-height: 220px;border-radius: 50px;">
+            <span style="font-size: 60px;color: #ed758c;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+            <span>
+                <h3>简历服务</h3>
+                <p style="color: #959595">包括简历内容优化、简历翻译、求职信代写、简历排版。HR将与您一对一沟通后进行服务，让您的简历优势突出，提升您的岗位匹配度。</p>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="thumbnail" style="border: 1px solid #57ad68;text-align: center;cursor: pointer;min-height: 220px;border-radius: 50px;">
+            <span style="font-size: 60px;color: #31aae1;"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <span>
+                <h3>职位推荐</h3>
+                <p style="color: #959595">想要高薪岗位却没有门路？不想每天花大量时间投简历？资深HR、猎头为您推荐优选职位，简历直达用人部门，求职从未如此简单。</p>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="thumbnail" style="border: 1px solid #57ad68;text-align: center;cursor: pointer;min-height: 220px;border-radius: 50px;">
+            <span style="font-size: 60px;color: #73c8b8;"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
+            <span>
+                <h3>其他需求</h3>
+                <p style="color: #959595">职业生涯咨询、晋升申请书、面试自我介绍演讲稿，所有和求职相关的服务，只要你能想到的，我们都能做到。</p>
+            </span>
         </div>
     </div>
 </div>

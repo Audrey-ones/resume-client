@@ -8,41 +8,84 @@
         function ($stateProvider, $urlRouterProvider, $httpProvider) {//路由定义
             $urlRouterProvider.otherwise('/homePage');
             $stateProvider
-                .state('homePage', {
+                .state('homePage', {//主页
                     url: '/homePage',
                     templateUrl: 'page/homePage.html',
                     controller: "homePageController"
                 })
-                .state('templateStore', {
+                .state('templateStore', {//模板商城
                     url: '/templateStore',
                     templateUrl: 'page/templateStore.html',
                     controller: "templateStoreCtrl"
                 })
-                .state('userPage', {
+                .state('userPage', {//用户主页
                     url: '/userPage',
                     templateUrl: 'page/userPage.html',
                     controller: "userPageController"
                 })
-                .state('editUser', {
+                .state('editUser', {//用户设置
                     url: '/userSetting',
                     templateUrl: 'page/userSetting.html',
                     controller: "userSettingController"
                 })
-                .state('singleTemplate',{
+                .state('singleTemplate',{//单个模板
                     url : '/singleTemplate:templateId',
                     templateUrl : "page/singleTemplate.html",
                     controller : 'singleTemplateCtrl'
                 })
-                .state('resumeWriting',{
+                .state('resumeWriting',{//简历代写
                     url : '/resumeWriting',
                     templateUrl : "page/resumeWriting.html",
                     controller : 'resumeWritingCtrl'
                 })
-                .state('resumeInfo',{
+                .state('resumeInfo',{//简历信息
                     url : '/resumeInfo',
                     templateUrl : "page/resumeInfo.html",
-                    controller : 'resumeInfoCtrl'
+                    controller : function ($state) {
+                        $state.go("resumeInfo.basicInfo");
+                    }
                 })
+                .state('resumeInfo.basicInfo',{
+                    url : '/basicInfo',
+                    templateUrl : "page/information/basicInfo.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.jobObjective',{
+                    url : '/jobObjective',
+                    templateUrl : "page/information/jobObjective.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.educationBgm',{
+                    url : '/educationBgm',
+                    templateUrl : "page/information/educationBgm.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.workExperience',{
+                    url : '/workExperience',
+                    templateUrl : "page/information/workExperience.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.programExperience',{
+                    url : '/programExperience',
+                    templateUrl : "page/information/programExperience.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.myEvaluate',{
+                    url : '/myEvaluate',
+                    templateUrl : "page/information/myEvaluate.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.myHobby',{
+                    url : '/myHobby',
+                    templateUrl : "page/information/myHobby.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+                .state('resumeInfo.mySkill',{
+                    url : '/mySkill',
+                    templateUrl : "page/information/mySkill.html"
+                    /*controller : 'basicInfoCtrl'*/
+                })
+
 
         }]);
 })();

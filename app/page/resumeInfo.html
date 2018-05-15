@@ -1,3 +1,59 @@
-<div>
-    <h1>HELLO,Boy</h1>
+<div class="resumeInfo">
+    <div class="col-lg-3 col-md-3 col-sm-3 leftNav">
+        <div style="border-bottom: 1px solid #ffffff;text-align: center">
+            <h2>简历信息</h2>
+        </div>
+        <div>
+            <ul>
+                <li class="li_click" ui-sref="resumeInfo.basicInfo">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    基本信息
+                </li>
+                <li>
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                    简历头像
+                </li>
+                <li ui-sref="resumeInfo.jobObjective">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    求职意向
+                </li>
+                <li ui-sref="resumeInfo.educationBgm">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                    教育背景
+                </li>
+                <li ui-sref="resumeInfo.workExperience">
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                    工作经验
+                </li>
+                <li ui-sref="resumeInfo.programExperience">
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                    项目经验
+                </li>
+                <li ui-sref="resumeInfo.myEvaluate">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    自我评价
+                </li>
+                <li ui-sref="resumeInfo.myHobby">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    兴趣爱好
+                </li>
+                <li ui-sref="resumeInfo.mySkill">
+                    <i class="fa fa-wrench" aria-hidden="true"></i>
+                    技能特长
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div ui-view class="col-lg-9 col-md-9 col-sm-9" style="background-color: #00b3ee;float: right;width: 80%">
+
+    </div>
 </div>
+
+<script>
+    $(".resumeInfo .leftNav ul li").on("click",function () {
+        $(this).siblings().removeClass("li_click");
+        $(this).addClass("li_click");
+    })
+</script>

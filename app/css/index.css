@@ -1572,3 +1572,41 @@ label{
     display: block;
 }
 
+/*简历信息样式*/
+.resumeInfo{
+    border-top: 1px solid #3c3c3c;
+}
+
+.resumeInfo .leftNav{
+    position: fixed;
+    width: 20%;
+    background: rgb(18, 208, 161);
+    height: 100%;
+    color: #FFFFFF;
+}
+
+.resumeInfo .leftNav ul{
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.resumeInfo .leftNav ul li{
+    padding: 8px;
+    margin-bottom: 12px;
+
+}
+
+.resumeInfo .leftNav ul li:hover{
+    background: #fff;
+    border-radius: 10px;
+    color: #12d0a1;
+}
+
+.li_click{
+    background: #fff;
+    border-radius: 10px;
+    color: #12d0a1;
+}
+

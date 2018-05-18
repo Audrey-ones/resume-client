@@ -1610,3 +1610,27 @@ label{
     color: #12d0a1;
 }
 
+.form_tr{
+    padding: 10px;
+    float: left;
+    width: 50%;
+}
+
+/*自定义输入框样式*/
+.form_input{
+    /*height: 35px;*/
+    border-radius: 5px;
+    border: 1px solid #969696;
+    outline: none;
+    font-size: 16px;
+    padding: 7px;
+    width: 60%;
+}
+
+#date1{
+    width: 50%;
+    position: absolute;
+    left: 82px;
+    top: 12px;
+}
+

@@ -1,3 +1,89 @@
-<div>
-    <h1>基本信息</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    编辑基本信息
+</button>
+<h1>哈哈哈</h1>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 100px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    编辑基本信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="padding: 10px;width: 50%">
+                    <label>姓&emsp;&emsp;名：</label>
+                    <input type="text" ng-model="test" class="form_input"/>
+                </div>
+
+                <div class="form_tr" style="padding-top: 17px;">
+                    <label>
+                        性&emsp;&emsp;别：
+                    </label>
+                    <input type="radio" name="sex" value="男" checked/>
+                    <span style="padding-right: 30px;"><i class="fa fa-mars" aria-hidden="true" style="font-size: 16px;color: #00b3ee;font-weight: 700"></i></span>
+                    <input type="radio" name="sex" value="女"/>
+                    <span><i class="fa fa-venus" aria-hidden="true" style="font-size: 16px;color: #e662d2;font-weight: 700"></i></span>
+                </div>
+                <div class="form_tr" style="position: relative;padding: 17px;">
+                    <label style="margin-left: -10px;">出生日期：</label>
+                    <div class="input-group date" id='date1'>
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form_tr">
+                    <label>最高学历：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div class="form_tr">
+                    <label>专业名称：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div class="form_tr">
+                    <label>工作年限：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div class="form_tr">
+                    <label>政治面貌：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div class="form_tr">
+                    <label>婚姻状况：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div class="form_tr">
+                    <label>联系方式：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div style="clear: both;padding: 10px;">
+                    <label>通讯地址：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div style="padding: 10px;">
+                    <label>技能描述：</label>
+                    <input type="text" class="form_input"/>
+                </div>
+                <div style="padding: 10px;">
+                    <label>个人简介：</label>
+                    <textarea type="text" class="form_input"/>
+                </div>
+
+
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-success" ng-click="saveInfo()">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
 </div>
+

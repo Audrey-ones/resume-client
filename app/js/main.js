@@ -47,8 +47,8 @@
                 })
                 .state('resumeInfo.basicInfo',{
                     url : '/basicInfo',
-                    templateUrl : "page/information/basicInfo.html"
-                    /*controller : 'basicInfoCtrl'*/
+                    templateUrl : "page/information/basicInfo.html",
+                    controller : 'basicInfoCtrl'
                 })
                 .state('resumeInfo.jobObjective',{
                     url : '/jobObjective',

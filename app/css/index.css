@@ -1634,3 +1634,15 @@ label{
     top: 12px;
 }
 
+/*基本信息*/
+
+.basicInfo_main{
+    border: 1px dotted #0fd0a1;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.basicInfo_main .info{
+    padding: 10px;
+}
+

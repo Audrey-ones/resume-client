@@ -1,31 +1,30 @@
-<div style="margin-top: 80px">
-    <div class="col-md-1"></div>
-    <div class="col-md-2" id="aside">
-        <ul ng-init='activeTab=1'>
+<div style="border: 1px dotted">
+    <!--<div class="col-md-1"></div>-->
+    <div class="col-lg-3 col-md-3 col-sm-3" id="aside" style="position: fixed;height: 100%;width: 20%;background-color: #384145;">
+        <ul ng-init='activeTab=1' style="padding-top: 50px;">
             <li ng-class='{active:activeTab==1}'>
-                <a href="javascript:void(0);" ng-click='activeTab=1'>
+                <a ng-click='activeTab=1'>
                     <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
                     <span>编辑资料</span>
                 </a>
 
             </li>
             <li ng-class='{active:activeTab==2}' >
-                <a href="javascript:void(0);" ng-click='activeTab=2'>
+                <a ng-click='activeTab=2'>
                     <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
-                    <span>账户绑定</span>
+                    <span>修改密码</span>
                 </a>
-
             </li>
-            <li ng-class='{active:activeTab==3}' >
+            <!--<li ng-class='{active:activeTab==3}' >
                 <a href="javascript:void(0);" ng-click='activeTab=3'>
                     <span><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
                     <span>修改密码</span>
                 </a>
 
-            </li>
+            </li>-->
         </ul>
     </div>
-    <div class="col-md-9" >
+    <div class="col-lg-9 col-md-9 col-sm-9" style="float: right;" >
         <div ng-show='activeTab==1'>
             <div class="list-container">
                 <form class="form-horizontal" style="width: 60%;">
@@ -33,13 +32,13 @@
                         <div class="col-sm-5"></div>
                         <div id="headDiv" class="col-sm-6">
                             <img class="img-circle" ng-src="{{user.avatar}}" id="userHead" title="点击更改头像"
-                                 onclick="getPicture()" style="width: 120px;height: 120px;margin-top: -25%;border: 1px solid#f0f0f0">
+                                 onclick="getPicture()" style="width: 120px;height: 120px;border: 1px solid#f0f0f0">
                         </div>
                         <input type="file" file-model="myFile" onchange="setImage(this,headDiv,userHead)" id="photo" style="display: none"/>
                     </div>
                     <div class="form-group" style="margin-top: 6%;">
                         <label for="name" class="col-sm-3 control-label" style="text-align: center">
-                            <span>昵称</span>
+                            <span>昵&emsp;&emsp;称</span>
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         </label>
                         <div class="col-sm-9">
@@ -50,7 +49,7 @@
 
                     <div class="form-group" style="margin-top: 25px;">
                         <label class="col-sm-3 control-label" style="text-align: center">
-                            <span>性别</span>
+                            <span>性&emsp;&emsp;别</span>
                             <i class="fa fa fa-male" aria-hidden="true"></i>
                         </label>
                         <div class="col-sm-9">
@@ -100,7 +99,7 @@
                                       ng-model="user.extra"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-top: 30px;">
                         <div class="col-sm-7">
                             <button type="submit" class="btn btn-success btn-default" ng-click="updateUser(user)" style="margin-left: 220px;width: 33%;padding: 8px">保存</button>
                         </div>
@@ -111,13 +110,26 @@
                 </form>
             </div>
         </div>
-        <div ng-show='activeTab==2'>
-            <p >账户绑定：</p>
-        </div>
-        <div ng-show='activeTab==3'>
-            <p >修改密码：</p>
+        <div ng-show='activeTab==2' style="margin-top: 100px;text-align: center;">
+            <div style="padding: 15px;">
+                <label>旧密码&emsp;：</label>
+                <input type="password" ng-model="oldPwd" class="form_input" style="width: 40%;"/>
+            </div>
+            <div style="padding: 15px;">
+                <label>新密码&emsp;：</label>
+                <input type="password" ng-model="newPwd" class="form_input" style="width: 40%;"/>
+            </div>
+            <div style="padding: 10px;">
+                <label>确认密码：</label>
+                <input type="password" class="form_input" style="width: 40%;"/>
+            </div>
+            <div class="btn btn-success" ng-click="saveInfo()" style="padding: 10px;width: 20%;margin-top: 30px;">修改</button>
 
         </div>
+        <!--<div ng-show='activeTab==3'>
+            <p >修改密码：</p>
+
+        </div>-->
     </div>
 </div>
 

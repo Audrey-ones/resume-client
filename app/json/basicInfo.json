@@ -1,0 +1,16 @@
+{
+  "basicInfo":{
+    "name":"轻语",
+    "sex":"女",
+    "birthday":"1992年10月5日",
+    "education":"本科",
+    "speciality":"计算机科学技术",
+    "work_time":"2年",
+    "politics_status":"共青团员",
+    "marriage":"未婚",
+    "skill":"暂无",
+    "phone":"13456789011",
+    "address":"江苏省南京市",
+    "introduction":"本人本科学历，计算机专业，有3年以上相关工作经验，精通Struts Hibernate Spring等主流开源框架，熟悉J2EE体系结构，对面向对象、MVC有深刻的理解，熟练使用常用软件建模工具进行系统分析和设计，熟悉运用Oracle，SQL Server等数据库开发及Weblogic/Tomcat/JBoss等主流应用服务器及Oracle数据库开发技术，另外还掌握常用需求/架构设计工具使用。本人曾参与多个项目的研发工作，在项目担任着领导的角色，带领团队完成项目。并给当时公司来了很多实际的价值，如将原来无利润的存货以10万美金的价格成交；开发了销售和市场项目，使购物中心的利润提高了33个百分点等。"
+  }
+}

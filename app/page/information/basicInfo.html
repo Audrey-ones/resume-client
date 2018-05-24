@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     编辑基本信息
 </button>
@@ -11,51 +11,53 @@
 <div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main">
     <div class="col-lg-5col-md-5 col-sm-5 info">
         <label>姓名：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.name}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>性别：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.sex}}</label>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-5 info">
         <label>出生日期：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.birthday}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>最高学历：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.education}}</label>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-5 info">
         <label>专业名称：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.speciality}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>工作年限：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.work_time}}</label>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-5 info">
         <label>政治面貌：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.politics_status}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>婚姻状况：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.marriage}}</label>
     </div>
     <div class="info">
         <label>联系方式：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.phone}}</label>
     </div>
     <div class="info">
         <label>通讯地址：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.address}}</label>
     </div>
     <div class="info">
         <label>技能描述：</label>
-        <label>轻语</label>
+        <label>{{basicInfo.skill}}</label>
     </div>
     <div class="info">
         <label>个人简介：</label>
-        <label>轻语</label>
+        <div class="description">
+            {{basicInfo.introduction}}
+        </div>
     </div>
 </div>
 
@@ -73,7 +75,7 @@
             <div class="modal-body">
                 <div style="padding: 10px;width: 50%">
                     <label>姓&emsp;&emsp;名：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.name" class="form_input"/>
                 </div>
 
                 <div class="form_tr" style="padding-top: 17px;">
@@ -87,8 +89,8 @@
                 </div>
                 <div class="form_tr" style="position: relative;padding: 17px;">
                     <label style="margin-left: -10px;">出生日期：</label>
-                    <div class="input-group date" id='date1'>
-                        <input type="text" class="form-control">
+                    <div class="input-group date" id='birthDate'>
+                        <input type="text" class="form-control" ng-model="basicInfo.birthday">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-calendar"></i>
                         </span>
@@ -96,39 +98,39 @@
                 </div>
                 <div class="form_tr">
                     <label>最高学历：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.education" class="form_input"/>
                 </div>
                 <div class="form_tr">
                     <label>专业名称：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.speciality" class="form_input"/>
                 </div>
                 <div class="form_tr">
                     <label>工作年限：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.work_time" class="form_input"/>
                 </div>
                 <div class="form_tr">
                     <label>政治面貌：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.politics_status" class="form_input"/>
                 </div>
                 <div class="form_tr">
                     <label>婚姻状况：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.marriage" class="form_input"/>
                 </div>
                 <div class="form_tr">
                     <label>联系方式：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.phone" class="form_input"/>
                 </div>
                 <div style="clear: both;padding: 10px;">
                     <label>通讯地址：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.address" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>技能描述：</label>
-                    <input type="text" class="form_input"/>
+                    <input type="text" ng-model="basicInfo.skill" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>个人简介：</label>
-                    <textarea type="text" class="form_input"/>
+                    <textarea type="text" ng-model="basicInfo.introduction" rows="3" class="form_input"/>
                 </div>
 
 

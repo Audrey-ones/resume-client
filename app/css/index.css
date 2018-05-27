@@ -1489,8 +1489,10 @@ label{
 .slider, .slider-panel img, .slider-extra {
     /*width: 650px;
     height: 413px;*/
-    width: 900px;
-    height: 470px;
+   /* width: 900px;
+    height: 470px;*/
+    width: 1287px;
+    height: 520px;
 }
 .slider {
     text-align: center;
@@ -1646,7 +1648,7 @@ label{
 }
 
 .basicInfo_main .info{
-    padding: 10px;
+    padding: 8px;
 }
 
 .allBtn{
@@ -1668,9 +1670,9 @@ label{
 
 /*简历代写*/
 .writingBtn{
-    padding: 15px;
+    padding: 18px;
     font-size: 20px;
     width: 15%;
-    margin-top: 12%;
+    margin-top: 22%;
     border-radius: 30px;
 }

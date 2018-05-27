@@ -15,7 +15,8 @@
         if (getCookie('user')){
             userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
                 $rootScope.nickname = data.nickname;
-                $rootScope.avatar = data.avatar;
+                var avatar = "../image/"+data.avatar;
+                $rootScope.avatar = avatar;
                 /*console.log(data)*/
             })
         }

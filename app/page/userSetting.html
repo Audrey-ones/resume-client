@@ -1,4 +1,4 @@
-<div style="border: 1px dotted">
+<div style="border-bottom: 1px dotted">
     <!--<div class="col-md-1"></div>-->
     <div class="col-lg-3 col-md-3 col-sm-3" id="aside" style="position: fixed;height: 100%;width: 20%;background-color: #384145;">
         <ul ng-init='activeTab=1' style="padding-top: 50px;">
@@ -110,7 +110,7 @@
                 </form>
             </div>
         </div>
-        <div ng-show='activeTab==2' style="margin-top: 100px;text-align: center;">
+        <div ng-show='activeTab==2' style="margin-top: 100px;">
             <div style="padding: 15px;">
                 <label>旧密码&emsp;：</label>
                 <input type="password" ng-model="oldPwd" class="form_input" style="width: 40%;"/>
@@ -121,9 +121,10 @@
             </div>
             <div style="padding: 10px;">
                 <label>确认密码：</label>
-                <input type="password" class="form_input" style="width: 40%;"/>
+                <input type="password" ng-model="comfirePwd" class="form_input" style="width: 40%;"/>
             </div>
-            <div class="btn btn-success" ng-click="saveInfo()" style="padding: 10px;width: 20%;margin-top: 30px;">修改</button>
+            <div class="btn btn-success" ng-click="changePwd(oldPwd,newPwd,comfirePwd)" style="padding: 10px;width: 15%;margin-top: 30px;margin-left: 105px;">修改</div>
+            <div class="btn  btn-default" ng-click="resetPwd(oldPwd,newPwd,comfirePwd)"  style="padding: 10px;width: 15%;margin-top: 30px;margin-left: 25px;color: #57ad68;border: 1px solid #57ad68;">重置</div>
 
         </div>
         <!--<div ng-show='activeTab==3'>

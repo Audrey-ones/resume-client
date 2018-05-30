@@ -1,3 +1,57 @@
-<div>
-    <h1>技能</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    新增技能特长
+</button>
+
+<div style="text-align: center;border-top: 1px dotted #0fd0a1;margin-top: 25px;">
+    <h2>技能特长</h2>
 </div>
+
+<div>
+    <div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main">
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 10px;">
+            <button type="button" class="btn btn-success allBtn" style="margin-left: 10px;background-color: #ee5353;">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-success allBtn" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div style="line-height: 35px;font-size: 16px;">
+            这些方法大家都可以说常见了。可是有一点可能大家还是不太清楚——outline在表单的button中使用时，在firefox浏览器下依然还是会有虚线框显示的。正好今天有一位朋友也问起这个问题，于是查了一下相关资料，才得知在Firefox下是需要使用别的方法来处理的。那么今天这个教程就简单的来了解如何处理这个问题。
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 100px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    编辑技能特长
+                </h4>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div style="padding: 10px;">
+                    <label>技能特长：</label>
+                    <textarea type="text" rows="10" class="form_input"/>
+                </div>
+
+
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-success" ng-click="saveInfo()">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+

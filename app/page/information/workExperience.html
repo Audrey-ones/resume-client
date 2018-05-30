@@ -1,40 +1,39 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" ng-click="addWork()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     <i class="fa fa-plus" aria-hidden="true"></i>
     新增工作经验
 </button>
 
-<div style="text-align: center;border-top: 1px dotted #0fd0a1;margin-top: 25px;">
+<div class="updateDisplay" style="text-align: center;border-top: 1px dotted #0fd0a1;margin-top: 25px;">
     <h2>工作经验</h2>
 </div>
 
-<div>
+<div ng-repeat="workInfo in workInfoList">
     <div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main">
         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 10px;">
             <button type="button" class="btn btn-success allBtn" style="margin-left: 10px;background-color: #ee5353;">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
             </button>
-            <button type="button" class="btn btn-success allBtn" data-toggle="modal" data-target="#myModal">
+            <button type="button" ng-click="updateWork(workInfo)" class="btn btn-success allBtn" data-toggle="modal" data-target="#myModal">
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
             </button>
         </div>
         <div class="col-lg-4col-md-4 col-sm-4 info">
             <label>时间：</label>
-            <label>轻语</label>
+            <label>{{workInfo.startTime}}--{{workInfo.endTime}}</label>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 info">
             <label>公司名称：</label>
-            <label>轻语</label>
+            <label>{{workInfo.companyName}}</label>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 info">
             <label>任职岗位：</label>
-            <label>轻语</label>
+            <label>{{workInfo.jobTitle}}</label>
         </div>
         <div class="info">
             <label>工作描述：</label>
             <div class="description">
-                这些方法大家都可以说常见了。可是有一点可能大家还是不太清楚——outline在表单的button中使用时，在firefox浏览器下依然还是会有虚线框显示的。正好今天有一位朋友也问起这个问题，于是查了一下相关资料，才得知在Firefox下是需要使用别的方法来处理的。那么今天这个教程就简单的来了解如何处理这个问题。
-
+                {{workInfo.workTime}}
             </div>
         </div>
 
@@ -57,29 +56,30 @@
             <div class="modal-body" style="text-align: center;">
                 <div style="padding: 10px;">
                     <label>入职时间：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="workInfo.startTime" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>离职时间：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="workInfo.endTime" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>公司名称：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="workInfo.companyName" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>任职岗位：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="workInfo.jobTitle" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>工作描述：</label>
-                    <textarea type="text" rows="6" class="form_input"/>
+                    <textarea ng-model="workInfo.workTime" type="text" rows="6" class="form_input"/>
                 </div>
 
 
             </div>
             <div class="modal-footer" style="text-align: center">
-                <button type="button" class="btn btn-success" ng-click="saveInfo()">保存</button>
+                <button type="button" class="btn btn-success addInfoBtn" ng-click="saveAddWork(workInfo)">新增</button>
+                <button type="button" class="btn btn-success updateInfoBtn" ng-click="saveUpdateWork(workInfo)">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>

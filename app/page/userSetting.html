@@ -31,8 +31,9 @@
                     <div class="form-group" style="margin-top: 25px">
                         <div class="col-sm-5"></div>
                         <div id="headDiv" class="col-sm-6">
-                            <img class="img-circle" ng-src="{{user.avatar}}" id="userHead" title="点击更改头像"
-                                 onclick="getPicture()" style="width: 120px;height: 120px;border: 1px solid#f0f0f0">
+                            <img class="img-circle" ng-src="{{avatar}}" id="userHead" title="点击更改头像"
+                                 onclick="getPicture()" style="cursor: pointer;width: 120px;height: 120px;border: 1px solid#f0f0f0">
+                            <div class="btn btn-default changeAvatar" ng-click="changeAvatar(user.username)">更换</div>
                         </div>
                         <input type="file" file-model="myFile" onchange="setImage(this,headDiv,userHead)" id="photo" style="display: none"/>
                     </div>
@@ -119,7 +120,7 @@
                 <label>新密码&emsp;：</label>
                 <input type="password" ng-model="newPwd" class="form_input" style="width: 40%;"/>
             </div>
-            <div style="padding: 10px;">
+            <div style="padding: 15px;">
                 <label>确认密码：</label>
                 <input type="password" ng-model="comfirePwd" class="form_input" style="width: 40%;"/>
             </div>

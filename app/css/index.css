@@ -1579,7 +1579,7 @@ label{
 
 /*简历信息样式*/
 .resumeInfo{
-    border-top: 1px solid #3c3c3c;
+    border-top: 1px dotted;
 }
 
 .resumeInfo .leftNav{
@@ -1675,4 +1675,12 @@ label{
     width: 15%;
     margin-top: 22%;
     border-radius: 30px;
+}
+
+.changeAvatar{
+    border: 1px solid;margin-left: 30px;margin-top: 60px;
+}
+
+.changeAvatar:hover{
+
 }

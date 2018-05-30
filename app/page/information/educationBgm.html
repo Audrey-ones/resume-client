@@ -1,17 +1,17 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" ng-click="addEducation()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     <i class="fa fa-plus" aria-hidden="true"></i>
     新增教育背景信息
 </button>
 
-<div style="text-align: center;border-top: 1px dotted #0fd0a1;margin-top: 25px;">
+<div class="updateDisplay" style="text-align: center;border-top: 1px dotted #0fd0a1;margin-top: 25px;">
     <h2>教育背景</h2>
 </div>
 
 <div>
-    <div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main">
+    <div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main updateDisplay">
         <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 10px;">
-            <button type="button" class="btn btn-success allBtn" style="margin-left: 10px;background-color: #ee5353;">
+            <button type="button" ng-click="updateEducation(educationInfo)" class="btn btn-success allBtn" style="margin-left: 10px;background-color: #ee5353;">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
             </button>
             <button type="button" class="btn btn-success allBtn" data-toggle="modal" data-target="#myModal">
@@ -20,25 +20,24 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 info">
             <label>时间：</label>
-            <label>轻语</label>
+            <label>{{educationInfo.enterTime}}--{{educationInfo.stopTime}}</label>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 info">
             <label>学校名称：</label>
-            <label>轻语</label>
+            <label>{{educationInfo.school}}</label>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 info">
             <label>专业名称：</label>
-            <label>轻语</label>
+            <label>{{educationInfo.speciality}}</label>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 info">
             <label>学历/学位：</label>
-            <label>轻语</label>
+            <label>{{educationInfo.extra}}</label>
         </div>
         <div class="info">
             <label>专业描述：</label>
             <div class="description">
-                这些方法大家都可以说常见了。可是有一点可能大家还是不太清楚——outline在表单的button中使用时，在firefox浏览器下依然还是会有虚线框显示的。正好今天有一位朋友也问起这个问题，于是查了一下相关资料，才得知在Firefox下是需要使用别的方法来处理的。那么今天这个教程就简单的来了解如何处理这个问题。
-
+                {{educationInfo.description}}
             </div>
         </div>
 
@@ -61,29 +60,34 @@
             <div class="modal-body" style="text-align: center;">
                 <div style="padding: 10px;">
                     <label>入学时间：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="educationInfo.enterTime" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>毕业时间：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="educationInfo.stopTime" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>学校名称：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="educationInfo.school" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>专业名称：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="educationInfo.speciality" class="form_input"/>
+                </div>
+                <div style="padding: 10px;">
+                    <label>学历/学位：</label>
+                    <input type="text" ng-model="educationInfo.extra" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>专业描述：</label>
-                    <textarea type="text" rows="6" class="form_input"/>
+                    <textarea type="text" ng-model="educationInfo.description" rows="6" class="form_input"/>
                 </div>
 
 
             </div>
             <div class="modal-footer" style="text-align: center">
-                <button type="button" class="btn btn-success" ng-click="saveInfo()">保存</button>
+                <button type="button" class="btn btn-success addInfoBtn" ng-click="saveAddEducation(educationInfo)">保存</button>
+                <button type="button" class="btn btn-success updateInfoBtn" ng-click="saveUpdateEducation(educationInfo)">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>

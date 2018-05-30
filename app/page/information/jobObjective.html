@@ -1,5 +1,9 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary addDisplay" ng-click="addJobObject()" style="display: none;" data-toggle="modal" data-target="#myModal">
+    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    新增求职意向信息
+</button>
+<button type="button" class="btn btn-success updateDisplay" ng-click="updateJobObject()" style="display: none;" data-toggle="modal" data-target="#myModal">
     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     编辑求职意向信息
 </button>
@@ -8,26 +12,26 @@
     <h2>求职意向</h2>
 </div>
 
-<div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main">
+<div class="col-lg-12 col-md-12 col-sm-12 basicInfo_main updateDisplay" style="display: none;">
     <div class="col-lg-5col-md-5 col-sm-5 info">
         <label>职位名称：</label>
-        <label>轻语</label>
+        <label>{{jobInfo.jobTitle}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>职位类型：</label>
-        <label>轻语</label>
+        <label>{{jobInfo.jobType}}</label>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-5 info">
         <label>入职时间：</label>
-        <label>轻语</label>
+        <label>{{jobInfo.enterTime}}</label>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 info">
         <label>期望薪资：</label>
-        <label>轻语</label>
+        <label>{{jobInfo.salaryStart}}元-{{jobInfo.salaryEnd}}元</label>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-5 info">
         <label>意向城市：</label>
-        <label>轻语</label>
+        <label>{{jobInfo.expectCity}}</label>
     </div>
 
 </div>
@@ -39,39 +43,39 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    编辑求职意向信息
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>编辑求职意向信息
                 </h4>
             </div>
             <div class="modal-body" style="text-align: center">
                 <div style="padding: 10px;">
                     <label>职位名称：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.jobTitle" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>职位类型：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.jobType" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>入职时间：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.enterTime" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>最低薪资：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.salaryStart" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>最高薪资：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.salaryEnd" class="form_input"/>
                 </div>
                 <div style="padding: 10px;">
                     <label>意向城市：</label>
-                    <input type="text" ng-model="test" class="form_input"/>
+                    <input type="text" ng-model="jobInfo.expectCity" class="form_input"/>
                 </div>
 
             </div>
             <div class="modal-footer" style="text-align: center">
-                <button type="button" class="btn btn-success" ng-click="saveInfo()">保存</button>
+                <button type="button" class="btn btn-success addInfoBtn" ng-click="saveAddJob(jobInfo)">新增</button>
+                <button type="button" class="btn btn-success updateInfoBtn" ng-click="saveUpdateJob(jobInfo)">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>

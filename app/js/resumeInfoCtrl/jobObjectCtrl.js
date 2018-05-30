@@ -1,16 +1,11 @@
 (function () {
     'use strict';
     var app = angular.module("resumeApp");
-    app.controller("basicInfoCtrl",["$scope","$rootScope","$state","basicInfoService",function ($scope,$rootScope,$state,basicInfoService) {
-        /*$scope.saveInfo = function () {
-            console.log($scope.test)
-            $('#myModal').modal('hide');
-        }*/
-
+    app.controller("jobObjectCtrl",["$scope","$rootScope","$state","jobObjectService",function ($scope,$rootScope,$state,jobObjectService) {
         var username = $rootScope.user.username;
         var token = $rootScope.token;
 
-        basicInfoService.loadBasicInfo(username,token,function (data) {
+        jobObjectService.loadJobInfo(username,token,function (data) {
             console.log(data)
             if (data == null){
                 $(".addDisplay").css("display","block");
@@ -18,7 +13,7 @@
             }else {
                 $(".updateDisplay").css("display","block");
                 $(".addInfoBtn").css("display","none");
-                $scope.basicInfo = data;
+                $scope.jobInfo = data;
             }
 
         })
@@ -28,62 +23,52 @@
             locale: moment.locale('zh-cn')
         });
         
-        $scope.addBasicInfo = function () {
-            $("#myModalLabel").text("新增基本信息");
+        $scope.addJobObject = function () {
+            $("#myModalLabel").text("新增求职意向信息");
         }
-        $scope.updateBasicInfo = function () {
-            $("#myModalLabel").text("编辑基本信息");
+        $scope.updateJobObject = function () {
+            $("#myModalLabel").text("编辑求职意向信息");
         }
 
-        $scope.saveAddInfo = function (basicInfo) {
+        $scope.saveAddEducation = function (jobInfo) {
             var information = {
-                "address": basicInfo.address,
-                "birthday": basicInfo.birthday,
-                "createTime": "2018-05-30T07:29:41.009Z",
-                "education": basicInfo.education,
-                "extra": basicInfo.extra,
-                "introduction": basicInfo.introduction,
+                "createTime": "2018-05-30T07:29:41.018Z",
+                "enterTime": jobInfo.enterTime,
+                "expectCity": jobInfo.expectCity,
+                "extra": "string",
                 "isActive": true,
-                "marriage": basicInfo.marriage,
-                "name": basicInfo.name,
-                "politicsStatus": basicInfo.politicsStatus,
-                "sex": "男",
-                "skill": basicInfo.skill,
-                "speciality": basicInfo.speciality,
-                "updateTime": "2018-05-30T07:29:41.009Z",
-                "username": username,
-                "workTime": basicInfo.workTime
+                "jobTitle": jobInfo.jobTitle,
+                "jobType": jobInfo.jobType,
+                "salaryEnd": jobInfo.salaryEnd,
+                "salaryStart": jobInfo.salaryStart,
+                "updateTime": "2018-05-30T07:29:41.018Z",
+                "username": username
             };
 
-            basicInfoService.addInformation(information,token,function (data) {
+            jobObjectService.addJobInformation(information,token,function (data) {
                 successTip("新增成功！");
                 setTimeout(function () {
                     refresh();
                 },1000);
             })
         }
-        $scope.saveUpdateInfo = function (basicInfo) {
+        $scope.saveUpdateJob = function (jobInfo) {
             var information = {
-                "id":basicInfo.id,
-                "address": basicInfo.address,
-                "birthday": basicInfo.birthday,
-                "createTime": "2018-05-30T07:29:41.009Z",
-                "education": basicInfo.education,
-                "extra": basicInfo.extra,
-                "introduction": basicInfo.introduction,
+                "id":jobInfo.id,
+                "createTime": "2018-05-30T07:29:41.018Z",
+                "enterTime": jobInfo.enterTime,
+                "expectCity": jobInfo.expectCity,
+                "extra": "string",
                 "isActive": true,
-                "marriage": basicInfo.marriage,
-                "name": basicInfo.name,
-                "politicsStatus": basicInfo.politicsStatus,
-                "sex": "男",
-                "skill": basicInfo.skill,
-                "speciality": basicInfo.speciality,
-                "updateTime": "2018-05-30T07:29:41.009Z",
-                "username": username,
-                "workTime": basicInfo.workTime
+                "jobTitle": jobInfo.jobTitle,
+                "jobType": jobInfo.jobType,
+                "salaryEnd": jobInfo.salaryEnd,
+                "salaryStart": jobInfo.salaryStart,
+                "updateTime": "2018-05-30T07:29:41.018Z",
+                "username": username
             };
 
-            basicInfoService.updateInformation(information,token,function (data) {
+            jobObjectService.updateJobInformation(information,token,function (data) {
                /* successTip("修改成功！");*/
                if (data.msg == "修改失败"){
                    errorTip("修改失败!");
@@ -119,10 +104,10 @@
         });
     }
 
-    app.service("basicInfoService",["$http","domain",function ($http,domain) {
-        this.loadBasicInfo = function (username,token,callBack) {
+    app.service("jobObjectService",["$http","domain",function ($http,domain) {
+        this.loadJobInfo = function (username,token,callBack) {
             $http({
-                url : domain + "/api/select/information/"+username,
+                url : domain + "/api/select/jobObjective/"+username,
                 method : "GET",
                 headers : {
                     'Authorization' : "Bearer "+token
@@ -133,10 +118,10 @@
                 }
             })
         }
-        this.addInformation = function (info,token,callback) {
+        this.addJobInformation = function (info,token,callback) {
             $http({
                 method:'POST',
-                url:domain + '/api/insert/information',
+                url:domain + '/api/insert/jobObjective',
                 data : JSON.stringify(info),
                 headers : {
                     'Authorization' : "Bearer "+token
@@ -147,10 +132,10 @@
                 }
             });
         }
-        this.updateInformation = function (info,token,callback) {
+        this.updateJobInformation = function (info,token,callback) {
             $http({
                 method:'PUT',
-                url:domain + '/api/update/information',
+                url:domain + '/api/update/jobObjective',
                 data : JSON.stringify(info),
                 headers : {
                     'Authorization' : "Bearer "+token

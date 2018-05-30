@@ -31,6 +31,13 @@
             $state.go('singleTemplate',{templateId: templateId});
         }
 
+        $scope.zaixian = function () {
+            errorTip("正在开发中!敬请期待~");
+        }
+        $scope.zhichang = function () {
+            errorTip("正在开发中!敬请期待~");
+        }
+
     }]);
 
     app.service("homePageService", ["$http","domain",function ($http,domain) {

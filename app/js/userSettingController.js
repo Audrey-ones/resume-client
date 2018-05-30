@@ -9,7 +9,7 @@
         userPageService.loadUserInfo($rootScope.user.username,$rootScope.token,function (data) {
             $scope.avatar = "../image/"+data.avatar;
             $scope.user=data;
-            $scope.user.avatar = "../image/"+data.avatar;
+            /*$scope.user.avatar = "../image/"+data.avatar;*/
             if (data.jobStatus == 0){
                 $("#job_status").val(data.jobStatus);
             }
@@ -20,24 +20,29 @@
                 $("#job_status").val(data.jobStatus);
             }
 
-            $scope.updateUser = function (user) {
-                /*console.log(user)*/
+            $scope.changeAvatar = function (username) {
                 // var file=document.querySelector("input[type=file]").files[0];
                 var file=document.getElementById("photo").files[0];
-                console.log(user.username)
-                console.log(file)
-                userSettingService.updateAvatar(user.username,file,$rootScope.token,function (data) {
+                userSettingService.updateAvatar(username,file,$rootScope.token,function (data) {
                     console.log(data)
+                    successTip("修改成功！");
+                    setTimeout(function () {
+                        refresh();
+                    },2000);
                 })
+            }
 
+
+            $scope.updateUser = function (user) {
+                /*console.log(user)*/
                 user.jobStatus = $("#job_status").val();
-                /*userSettingService.updateUserInfo(user,$rootScope.token,function (userData) {
+                userSettingService.updateUserInfo(user,$rootScope.token,function (userData) {
                     successTip("修改成功！");
                     setTimeout(function () {
                         refresh();
                     },1000);
-                    /!*$state.go('userPage');*!/
-                })*/
+                    /*$state.go('userPage');*/
+                })
             };
 
             $scope.changePwd = function (oldPwd,newPwd,comfirePwd) {

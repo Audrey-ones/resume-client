@@ -52,18 +52,18 @@
                 })
                 .state('resumeInfo.jobObjective',{
                     url : '/jobObjective',
-                    templateUrl : "page/information/jobObjective.html"
-                    /*controller : 'basicInfoCtrl'*/
+                    templateUrl : "page/information/jobObjective.html",
+                    controller : 'jobObjectCtrl'
                 })
                 .state('resumeInfo.educationBgm',{
                     url : '/educationBgm',
-                    templateUrl : "page/information/educationBgm.html"
-                    /*controller : 'basicInfoCtrl'*/
+                    templateUrl : "page/information/educationBgm.html",
+                    controller : 'educationCtrl'
                 })
                 .state('resumeInfo.workExperience',{
                     url : '/workExperience',
-                    templateUrl : "page/information/workExperience.html"
-                    /*controller : 'basicInfoCtrl'*/
+                    templateUrl : "page/information/workExperience.html",
+                    controller : 'workCtrl'
                 })
                 .state('resumeInfo.programExperience',{
                     url : '/programExperience',

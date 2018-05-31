@@ -9,8 +9,10 @@
             console.log(data)
             if (data == null){
                 $(".updateDisplay").css("display","none");
+                $(".updateInfoBtn").css("display","none");
 
             }else {
+                $(".addInfoBtn").css("display","none");
                 $scope.educationInfo = data;
             }
 
@@ -23,11 +25,9 @@
         
         $scope.addEducation = function () {
             $("#myModalLabel").text("新增教育背景信息");
-            $(".updateInfoBtn").css("display","none");
         }
         $scope.updateEducation = function (education) {
             $("#myModalLabel").text("编辑教育背景信息");
-            $(".addInfoBtn").css("display","none");
             $scope.educationInfo = education;
         }
 
